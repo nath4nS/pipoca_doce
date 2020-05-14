@@ -30,6 +30,7 @@ if($acao == 'deletar') {
 } else if($acao == 'editar') {
 
 	$id = $_POST['id'];
+	
 	$genero->setId($_POST['id']);
 	$genero->setNome($_POST['nome']);
 

@@ -1,23 +1,23 @@
 <?php
 require_once 'Model.php';
 
-class GeneroDAO extends Model
+class DiretorDAO extends Model
 {
-	public function __construct() 
-	{
-		parent::__construct();
-		$this->tabela = 'genero';
-		$this->class = 'Genero';
-	}
+    public function __construct()
+    {
+        parent::__construct();
+        $this->class = 'Diretor';
+        $this->tabela = 'diretor';
+    }
 
-	public function insereGenero(Genero $genero) {
-		$values = "null, '{$genero->getNome()}'";
+	public function insereDiretor(Diretor $diretor) {
+		$values = "null, '{$diretor->getNome()}'";
 		return $this->inserir($values);
 	}
 
-	public function alteraGenero(Genero $genero) {
-		$values = "nome = '{$genero->getNome()}'";
-		$this->alterar($genero->getId(), $values);
+	public function alteraDiretor(Diretor $diretor) {
+		$values = "nome = '{$diretor->getNome()}'";
+		$this->alterar($diretor->getId(), $values);
 	}
 
 	public function listar($pesquisa = '')

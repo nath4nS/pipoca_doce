@@ -10,7 +10,7 @@
 	      	<ul class="navbar-nav mr-auto">
 
 		        <li class="nav-item dropdown">
-			        <a class="nav-link" href="#" id="navbarDropdown">Filmes</a>
+			        <a class="nav-link" href="filme.php" id="navbarDropdown">Filmes</a>
 		        </li>
 
 		        <li class="nav-item dropdown">
@@ -18,7 +18,7 @@
 		        </li>
 
 	        	<li class="nav-item dropdown">
-	          		<a class="nav-link" href="#" id="navbarDropdown">Diretor</a>
+	          		<a class="nav-link" href="diretor.php" id="navbarDropdown">Diretor</a>
 	        	</li>	        	
 
 	        	<li class="nav-item dropdown">
