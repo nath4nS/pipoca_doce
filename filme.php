@@ -10,9 +10,10 @@ require 'classes/FilmeDAO.php';
 require 'classes/DiretorDAO.php';
 
 $filmeDAO = new FilmeDAO();
+$filmes = $filmeDAO->listar();
 $generoDAO = new GeneroDAO();
 $diretor = new DiretorDAO();
-$filmes = $filmeDAO->listar();
+print_r($diretor);
 
 ?>
 
@@ -33,31 +34,32 @@ $filmes = $filmeDAO->listar();
 				<th>#ID</th>
 				<th>Nome</th>
 				<th>Gênero</th>
+				<th>Duração</th>
 				<th>Data de lançamento</th>
 				<th>Sinopse</th>
 				<th>Elenco</th>
-				<th>Comentários</th>
 				<th>Diretor</th>
 				<th>Ações</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			<?php foreach ($filmes as $filme) {
-				$genero = $generoDAO->get($filme->getGenero());
-				/*$diretor = $diretorDAO->get($filme->getDiretor());*/
-			?>
-				<?= print_r($filme)  ?>
-			
+			<?php foreach ($filmes as $filme) { ?>
+				<?=  
+				print_r($filmes);
+				echo "<pre>"; 
+				?>
+
 			<tr>
 				<td><?= $filme->getId() ?></td>
 				<td><?= $filme->getNome() ?></td>
-				<td><?= $genero->getNome() ?></td>
+				<td><?= $filme->getGenero() ?></td>
+				<td><?= $filme->getDuracao() ?></td>
 				<td><?= $filme->getDataLancamento() ?></td>
 				<td><?= $filme->getSinopse() ?></td>
 				<td><?= $filme->getElenco() ?></td>
-				<td><?= $filme->getComentarios() ?></td>
-				<td><?= $diretor->getNome() ?></td>
+				<td><?= $filme->getDiretor() ?></td>
+
 				<td>
 					<a href="form_filme.php?id=<?= $filme->getId() ?>" class="btn btn-danger">
 						Editar

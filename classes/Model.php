@@ -22,14 +22,15 @@ class Model
 
 	public function listar($condicao = '')
 	{
-		$where = '';
+/*		$where = '';
 		if(condicao != '') {
 			$where = " WHERE {$condicao}";
-		}
+		}*/
 		$sql = "SELECT * FROM {$this->tabela} {$where}";
 		$stmt = $this->db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
 		$stmt->execute();
+		print_r($stmt);
 		return $stmt->fetchAll();
 	}
 

@@ -13,11 +13,11 @@ class FilmeDAO extends Model
     {
     	$values = "null, 
     				'{$filme->getNome()}',
+                    '{$filme->getDuracao()}',
                     '{$filme->getGenero()->getId()}',
     				'{$filme->getDataLancamento()}', 
                     '{$filme->getSinopse()}', 
                     '{$filme->getElenco()}', 
-                    '{$filme->getComentarios()}', 
                     '{$filme->getDiretor()->getId()}'
                     ";
     	return $this->inserir($values);
@@ -26,10 +26,10 @@ class FilmeDAO extends Model
     public function alteraFilme(Filme $filme) 
     {
     	$values = 	"nome = '{$filme->getNome()}',
+                    duracao = '{$filme->getDuracao()}',
     				dataLancamento = '{$filme->getDataLancamento()}',
     				sinopse = '{$filme->getSinopse()}',
     				elenco = '{$filme->getElenco()}',
-    				comentarios = '{$filme->getComentarios()}',				
                     genero = '{$filme->getGenero()->getId()}',
     				diretor = '{$filme->getDiretor()->getId()}'
     				";
@@ -39,10 +39,7 @@ class FilmeDAO extends Model
     public function listar($pesquisa = '')
     {
         if($pesquisa != '') {
-            $sql = "SELECT * FROM {$this->tabela} 
-                    WHERE nome like '%{$pesquisa}%'
-                        OR descricao like '%{$pesquisa}%'
-                        OR qtd like '%{$pesquisa}%'";
+            $sql = "SELECT * FROM {$this->tabela} ";
         } else {
             $sql = "SELECT * FROM {$this->tabela}";
         }
@@ -51,5 +48,4 @@ class FilmeDAO extends Model
         $stmt->execute();
         return $stmt->fetchAll();
     }
-
 }

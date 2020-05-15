@@ -5,10 +5,10 @@ class Filme
 	private $id;
 	private $nome;
 	private $genero;
+    private $duracao;
 	private $dataLancamento;
 	private $sinopse;
 	private $elenco;
-	private $comentarios;
 	private $diretor;
 
 	/**
@@ -74,6 +74,26 @@ class Filme
     /**
      * @return mixed
      */
+    public function getDuracao()
+    {
+        return $this->duracao;
+    }
+
+    /**
+     * @param mixed $duracao
+     *
+     * @return self
+     */
+    public function setDuracao($duracao)
+    {
+        $this->duracao = $duracao;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getDataLancamento()
     {
         return $this->dataLancamento;
@@ -131,25 +151,7 @@ class Filme
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getComentarios()
-    {
-        return $this->comentarios;
-    }
 
-    /**
-     * @param mixed $comentarios
-     *
-     * @return self
-     */
-    public function setComentarios($comentarios)
-    {
-        $this->comentarios = $comentarios;
-
-        return $this;
-    }
 
     /**
      * @return mixed
