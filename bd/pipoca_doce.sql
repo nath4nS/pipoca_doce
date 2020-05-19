@@ -49,9 +49,9 @@ DROP TABLE IF EXISTS `diretor`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(60) NOT NULL,
+  `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `diretor` (
 
 LOCK TABLES `diretor` WRITE;
 /*!40000 ALTER TABLE `diretor` DISABLE KEYS */;
-INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(7,'Teste');
+INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff');
 /*!40000 ALTER TABLE `diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,20 +74,18 @@ DROP TABLE IF EXISTS `filme`;
 CREATE TABLE `filme` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `genero_id` int NOT NULL,
+  `genero` int NOT NULL,
   `duracao` varchar(20) NOT NULL,
   `dataLancamento` varchar(50) NOT NULL,
   `sinopse` text NOT NULL,
   `elenco` varchar(200) NOT NULL,
-  `comentarios_id` int DEFAULT NULL,
-  `diretor_id` int DEFAULT NULL,
+  `diretor` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_filme_genero_idx` (`genero_id`),
-  KEY `fk_filme_comentarios1_idx` (`comentarios_id`),
-  KEY `fk_filme_diretor1_idx` (`diretor_id`),
-  CONSTRAINT `fk_diretor` FOREIGN KEY (`diretor_id`) REFERENCES `diretor` (`id`),
-  CONSTRAINT `fk_genero` FOREIGN KEY (`genero_id`) REFERENCES `genero` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  KEY `fk_genero_idx` (`genero`),
+  KEY `fk_diretor_idx` (`diretor`),
+  CONSTRAINT `fk_diretor` FOREIGN KEY (`diretor`) REFERENCES `diretor` (`id`),
+  CONSTRAINT `fk_genero` FOREIGN KEY (`genero`) REFERENCES `genero` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +94,7 @@ CREATE TABLE `filme` (
 
 LOCK TABLES `filme` WRITE;
 /*!40000 ALTER TABLE `filme` DISABLE KEYS */;
-INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',NULL,NULL);
+INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1),(2,'Rambo: Programado para Matar',3,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais.','Sylvester Stallone, Richard Crenna, Brian Dennehy',3);
 /*!40000 ALTER TABLE `filme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +118,7 @@ CREATE TABLE `genero` (
 
 LOCK TABLES `genero` WRITE;
 /*!40000 ALTER TABLE `genero` DISABLE KEYS */;
-INSERT INTO `genero` VALUES (1,'Açãoewe'),(2,'Animação'),(3,'Aventura'),(4,'Cinema de arte'),(5,'Comédia'),(6,'Comédia romântica'),(7,'Comédia dramática'),(8,'Comédia de ação'),(9,'Dança'),(10,'Documentário'),(11,'Docuficção'),(12,'Drama'),(13,'Espionagem'),(14,'Faroeste'),(15,'Fantasia científica'),(16,'Ficção científica'),(17,'Filmes de guerra'),(18,'Musical'),(19,'Filme policial'),(20,'Romance'),(21,'Seriado'),(22,'Suspense'),(23,'Terror'),(24,'Pornográfico'),(28,'Teste');
+INSERT INTO `genero` VALUES (1,'Ação'),(2,'Animação'),(3,'Aventura'),(4,'Cinema de arte'),(5,'Comédia'),(6,'Comédia romântica'),(7,'Comédia dramática'),(8,'Comédia de ação'),(9,'Dança'),(10,'Documentário'),(11,'Docuficção'),(12,'Drama'),(13,'Espionagem'),(14,'Faroeste'),(15,'Fantasia científica'),(16,'Ficção científica'),(17,'Filmes de guerra'),(18,'Musical'),(19,'Filme policial'),(20,'Romance'),(21,'Seriado'),(22,'Suspense'),(23,'Terror'),(24,'Pornográfico'),(28,'Teste');
 /*!40000 ALTER TABLE `genero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-14 13:42:54
+-- Dump completed on 2020-05-19 10:55:24

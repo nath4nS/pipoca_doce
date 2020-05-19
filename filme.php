@@ -12,8 +12,7 @@ require 'classes/DiretorDAO.php';
 $filmeDAO = new FilmeDAO();
 $filmes = $filmeDAO->listar();
 $generoDAO = new GeneroDAO();
-$diretor = new DiretorDAO();
-print_r($diretor);
+$diretorDAO = new DiretorDAO();
 
 ?>
 
@@ -44,21 +43,21 @@ print_r($diretor);
 		</thead>
 
 		<tbody>
-			<?php foreach ($filmes as $filme) { ?>
-				<?=  
-				print_r($filmes);
-				echo "<pre>"; 
-				?>
+			<?php foreach ($filmes as $filme) { 
+				$genero = $generoDAO->get($filme->getGenero());
+				$diretor = $diretorDAO->get($filme->getDiretor());
+			?>
+				<?=  print_r($filme); ?>
 
 			<tr>
 				<td><?= $filme->getId() ?></td>
 				<td><?= $filme->getNome() ?></td>
-				<td><?= $filme->getGenero() ?></td>
+				<td><?= $genero->getNome() ?></td>
 				<td><?= $filme->getDuracao() ?></td>
 				<td><?= $filme->getDataLancamento() ?></td>
 				<td><?= $filme->getSinopse() ?></td>
 				<td><?= $filme->getElenco() ?></td>
-				<td><?= $filme->getDiretor() ?></td>
+				<td><?= $diretor->getNome() ?></td> 
 
 				<td>
 					<a href="form_filme.php?id=<?= $filme->getId() ?>" class="btn btn-danger">
