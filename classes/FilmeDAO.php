@@ -13,8 +13,8 @@ class FilmeDAO extends Model
     {
     	$values = "null, 
     				'{$filme->getNome()}',
-                    '{$filme->getDuracao()}',
                     '{$filme->getGenero()->getId()}',
+                    '{$filme->getDuracao()}',
     				'{$filme->getDataLancamento()}', 
                     '{$filme->getSinopse()}', 
                     '{$filme->getElenco()}', 
@@ -26,11 +26,11 @@ class FilmeDAO extends Model
     public function alteraFilme(Filme $filme) 
     {
     	$values = 	"nome = '{$filme->getNome()}',
+                    genero = '{$filme->getGenero()->getId()}',
                     duracao = '{$filme->getDuracao()}',
     				dataLancamento = '{$filme->getDataLancamento()}',
     				sinopse = '{$filme->getSinopse()}',
     				elenco = '{$filme->getElenco()}',
-                    genero = '{$filme->getGenero()->getId()}',
     				diretor = '{$filme->getDiretor()->getId()}'
     				";
     	$this->alterar($filme->getId(), $values);

@@ -41,4 +41,8 @@
 </nav>
 
 <div class="container">
-	
+  <?php 
+  if(isset($_GET['msg']) && $_GET['msg'] != '') {
+   echo '<div class="alert alert-info">'.$_GET['msg'].'</div>';
+  }
+?>

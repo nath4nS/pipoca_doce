@@ -47,7 +47,6 @@ $diretorDAO = new DiretorDAO();
 				$genero = $generoDAO->get($filme->getGenero());
 				$diretor = $diretorDAO->get($filme->getDiretor());
 			?>
-				<?=  print_r($filme); ?>
 
 			<tr>
 				<td><?= $filme->getId() ?></td>
@@ -60,16 +59,14 @@ $diretorDAO = new DiretorDAO();
 				<td><?= $diretor->getNome() ?></td> 
 
 				<td>
-					<a href="form_filme.php?id=<?= $filme->getId() ?>" class="btn btn-danger">
+					<a href="form_filme.php?id=<?= $filme->getId() ?>" data-toggle="tooltip" title="Editar Filme" class="btn btn-danger">
 						Editar
 					</a>					
 					<a href="controle_filme.php?acao=deletar&id=<?= $filme->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o gênero?')">
 						Excluir
 					</a>
 				</td>
-
-			</tr>
-		
+			</tr>		
 			<?php } ?>
 		</tbody>
 	</table>	

@@ -2,19 +2,20 @@
 <?php include './layout/menu.php';?>
 <?php
 
-require 'classes/Filme.php';
-require 'classes/FilmeDAO.php';
+require 'classes/Genero.php';
 require 'classes/GeneroDAO.php';
-/*require 'classes/Diretor.php';*/
+require 'classes/Diretor.php';
 require 'classes/DiretorDAO.php';
 
-$filme = new Filme();
 $generoDAO = new GeneroDAO();
 $generos = $generoDAO->listar();
 $diretorDAO = new DiretorDAO();
 $diretores = $diretorDAO->listar();
-/*print_r($diretorDAO);*/
 
+require 'classes/Filme.php';
+require 'classes/FilmeDAO.php';
+
+$filme = new filme();
 	if(isset($_GET['id']) && $_GET['id'] != '') {
 		$id = $_GET['id'];
 		$filmeDAO = new FilmeDAO();
@@ -47,7 +48,12 @@ $diretores = $diretorDAO->listar();
 				<select name="genero" id="genero" class="form-control" required>
 					<option value="">Selecione um genero</option>
 						<?php foreach($generos as $genero) : ?>
-							<option value="<?= $genero['id']; ?>"><?= $genero['nome']; ?></option>
+							<option value="<?= $genero->getId(); ?>"
+								<?= ($filme->getGenero() != '' && 
+								$filme->getGenero() == $genero->getId() 
+								? 'selected' : '') ?>>
+								<?= $genero->getNome(); ?>	
+							</option>
 						<?php endforeach; ?>
 				</select>
 			</div>
@@ -64,7 +70,7 @@ $diretores = $diretorDAO->listar();
 
 			<div class="form-group">
 				<label for="sinopse">Sinopse</label>
-				<input type="text" class="form-control" name="sinopse" value="<?=($filme->getSinopse() != '' ? $filme->getSinopse() : '')?>">
+				<textarea type="text" class="form-control" name="sinopse" rows="6"><?=($filme->getSinopse() != '' ? $filme->getSinopse() : '')?></textarea>
 			</div>
 
 			<div class="form-group">
@@ -77,8 +83,12 @@ $diretores = $diretorDAO->listar();
 				<select name="diretor" id="diretor" class="form-control" required>
 					<option value="">Selecione um diretor</option>
 						<?php foreach($diretores as $diretor) : ?>
-							<?php print_r($diretor);  ?>
-							<option value="<?= $diretor['id']; ?>"><?= $diretor['nome']; ?></option>
+							<option value="<?= $diretor->getId(); ?>"
+								<?= ($filme->getDiretor() != '' && 
+								$filme->getDiretor() == $diretor->getId() 
+								? 'selected' : '') ?>>
+								<?= $diretor->getNome(); ?>	
+							</option>
 						<?php endforeach; ?>
 				</select>
 			</div>
