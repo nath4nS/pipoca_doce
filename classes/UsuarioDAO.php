@@ -10,29 +10,31 @@ class UsuarioDAO extends Model
 		$this->class = 'Usuario';
 	}
 
-	public function insereUsuario(Usuario $Usuario) {
-		$values = "null, '{$Usuario->getNome()}'";
-		$values = "null, '{$Usuario->getDataNascimento()}'";
-		$values = "null, '{$Usuario->getEmail()}'";
-		$values = "null, '{$Usuario->getSenha()}'";
-		$values = "null, '{$Usuario->getTipo()}'";
-		$values = "null, '{$Usuario->getImagem()}'";
+	public function insereUsuario(Usuario $usuario) {
+		$values = "null,
+				  '{$usuario->getNome()}',
+				  '{$usuario->getDataNascimento()}',
+				  '{$usuario->getEmail()}',
+				  '{$usuario->getSenha()}',
+				  '{$usuario->getTipo()}',
+				  '{$usuario->getImagem()}'
+				  ";
 		return $this->inserir($values);
 	}
 
-	public function alteraUsuario(Usuario $Usuario) 
+	public function alteraUsuario(Usuario $usuario) 
 	{
 		$altera_senha = ($usuario->getSenha() != '' ? ", senha = '{$usuario->getSenha()}'" : '');
 		$altera_imagem = ($usuario->getImagem() != '' ? ", imagem = '{$usuario->getImagem()}'" : '');
 
-		$values = "nome = '{$Usuario->getNome()}',
-					dataNascimento = '{$Usuario->getDataNascimento()}',
-					email = '{$Usuario->getEmail()}',
-					senha = '{$Usuario->getSenha()}',
-					tipo = '{$Usuario->getTipo()}'
+		$values = "nome = '{$usuario->getNome()}',
+					dataNascimento = '{$usuario->getDataNascimento()}',
+					email = '{$usuario->getEmail()}',
+					senha = '{$usuario->getSenha()}',
+					tipo = '{$usuario->getTipo()}'
 					{$altera_imagem}
 					{$altera_senha}";
-		$this->alterar($Usuario->getId(), $values);
+		$this->alterar($usuario->getId(), $values);
 	}
 
 	public function listar($pesquisa = '')

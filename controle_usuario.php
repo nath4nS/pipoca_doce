@@ -64,18 +64,18 @@ if($acao == 'deletar') {
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
 	$usuario->setTipo($_POST['tipo']);
-	$id = $usuarioDAO->insereUsuario($usuario);
+	$id_usuario = $usuarioDAO->insereUsuario($usuario);
 	$msg = 'Usuário cadastrado com sucesso';
 
-	header("Location: form_usuario.php?id=$id&msg=$msg");
+	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
 
 } else if(($acao == 'editar') 
-/*		|| ($_SESSION['id_usuario'] == $_POST['id'])) {
+		|| ($_SESSION['id_usuario'] == $_POST['id'])) {
 
 	if($_POST['senha'] != ''){
 		$usuario->setSenha($_POST['senha']);
-	}*/
-	$id = $_POST['id'];
+	}
+	$id_usuario = $_POST['id'];
 
 
 
@@ -113,9 +113,9 @@ if($acao == 'deletar') {
 				unlink($imagem_a_remover);
 			}
 
-/*			if($id_usuario == $_SESSION['id_usuario']) {
+			if($id_usuario == $_SESSION['id_usuario']) {
 				$_SESSION['imagem'] = $usuario->getImagem();
-			}*/
+			}
 		} else {
 		  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
 		  $msg = "Não foi possível enviar o arquivo, tente novamente";
@@ -124,11 +124,14 @@ if($acao == 'deletar') {
 		}
 	}
 
+	$usuario->setId($_POST['id']);
 	$usuario->setNome($_POST['nome']);
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
 	$usuario->setTipo($_POST['tipo']);
+	/*print_r($usuario); exit;*/
+
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';
 	
@@ -148,5 +151,7 @@ if($acao == 'deletar') {
 	$msg = 'Imagem removida com sucesso';
 	
 	header("Location: usuarios.php?msg=$msg");
+
+}
 
 

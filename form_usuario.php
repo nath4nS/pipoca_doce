@@ -43,7 +43,7 @@ $usuario = new Usuario();
 			</div>
 					
 			<div class="form-group">
-				<label for="dataNascimento">Nome</label>
+				<label for="dataNascimento">Data de nascimento</label>
 				<input type="text" class="form-control" name="dataNascimento" value="<?=($usuario->getDataNascimento() != '' ? $usuario->getDataNascimento() : '')?>">
 			</div>
 					
@@ -71,3 +71,25 @@ $usuario = new Usuario();
 	
 
 <?php include './layout/footer.php';?>
+
+<script type="text/javascript">
+var uploadfoto = document.getElementById('imagem');
+var fotopreview = document.getElementById('fotopreview');
+
+uploadfoto.addEventListener('change', function(e) {
+	fotopreview.src = '/assets/img/loading.gif';
+    showThumbnail(this.files);
+});
+
+function showThumbnail(files) {
+    if (files && files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+       fotopreview.src = e.target.result;
+    }
+
+        reader.readAsDataURL(files[0]);
+    }
+}
+</script>
