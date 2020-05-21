@@ -12,7 +12,7 @@ if(isset($_GET['id']) && $_GET['id'] != '') {
 
 /**Configurações de upload de imagens*/
 
-$upload['pasta_usuarios'] = 'assets/img/usuario/';
+$upload['pasta_usuario'] = 'assets/img/usuario/';
 $upload['extensoes'] = ['jpg', 'png', 'gif'];
 
 $upload['erros'][0] = 'Não houve erro';
@@ -49,7 +49,7 @@ if($acao == 'deletar') {
 		}
 		$nome_final = $imagem[0] . '-' . date('YmdHmi') . '.' . $extensao;
 		// Depois verifica se é possível mover o arquivo para a pasta escolhida
-		if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['pasta_usuarios'] . $nome_final)) {
+		if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['pasta_usuario'] . $nome_final)) {
 			$usuario->setImagem($nome_final);
 		} else {
 		  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
@@ -70,7 +70,7 @@ if($acao == 'deletar') {
 	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
 
 } else if(($acao == 'editar') 
-		|| ($_SESSION['id_usuario'] == $_POST['id'])) {
+			|| ($_SESSION['id_usuario'] == $_POST['id'])) {
 
 	if($_POST['senha'] != ''){
 		$usuario->setSenha($_POST['senha']);
@@ -99,15 +99,15 @@ if($acao == 'deletar') {
 		
 
 		// Depois verifica se é possível mover o arquivo para a pasta escolhida
-		if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['pasta_usuarios'] . $nome_final)) {
+		if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['pasta_usuario'] . $nome_final)) {
 
 			//incluindo a imagem nova no registro do usuário
 			$usuario->setImagem($nome_final);
 
 			//alimentando um usuário temporário
-			$usuarioTemp = $usuarioDAO->get($id);
+			$usuarioTemp = $usuarioDAO->get($id_usuario);
 			//montando link da imagem atual do usuario, representado pelo usuario temporario
-			$imagem_a_remover = $upload['pasta_usuarios'] . $usuarioTemp->getImagem();
+			$imagem_a_remover = $upload['pasta_usuario'] . $usuarioTemp->getImagem();
 			//removendo a imagem antiga
 			if( file_exists($imagem_a_remover) ) {
 				unlink($imagem_a_remover);
@@ -130,7 +130,7 @@ if($acao == 'deletar') {
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
 	$usuario->setTipo($_POST['tipo']);
-	/*print_r($usuario); exit;*/
+	//print_r($usuario); exit;
 
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';

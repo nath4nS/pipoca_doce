@@ -105,7 +105,7 @@ class Usuario
      */
     public function setSenha($senha)
     {
-        $this->senha = $senha;
+        $this->senha = $senha; 
 
         return $this;
     }

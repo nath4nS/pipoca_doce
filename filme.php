@@ -16,17 +16,60 @@ $diretorDAO = new DiretorDAO();
 
 ?>
 
-<div class="row" style="margin-top:40px">
-	<div class="col-10">
-		<h2>Gerenciar Filmes</h2>
+
+	<div class="row" style="margin-top:40px">
+		<div class="col-10">
+			<h2>Gerenciar Filmes</h2>
+		</div>
+
+		<div class="col-2">
+			<a href="form_filme.php" class="btn btn-success">Novo Filme</a>
 	</div>
 
-	<div class="col-2">
-		<a href="form_filme.php" class="btn btn-success">Novo Filme</a>
-	</div>
+	<div class="container">	
+		<ul id="filmeContainer">
+		<?php foreach ($filmes as $filme) { 
+			$genero = $generoDAO->get($filme->getGenero());
+			$diretor = $diretorDAO->get($filme->getDiretor());
+		?>
+			<li id="filme">
+				<strong>ID:</strong>
+				<p><?= $filme->getId() ?></p>
 
-</div>
-<div class="row">
+				<strong>Nome:</strong>
+				<p><?= $filme->getNome() ?></p>
+
+				<strong>Genêro:</strong>
+				<p><?= $genero->getNome() ?></p>
+												
+				<strong>Duração:</strong>
+				<p><?= $filme->getDuracao() ?></p>
+							
+				<strong>Data de lançamento:</strong>
+				<p><?= $filme->getDataLancamento() ?></p>
+							
+				<strong>Sinopse:</strong>
+				<p><?= $filme->getSinopse() ?></p>
+							
+				<strong>Elenco:</strong>
+				<p><?= $filme->getElenco() ?></p>
+							
+				<strong>Diretor:</strong>
+				<p><?= $diretor->getNome() ?></p>
+
+				<a href="form_filme.php?id=<?= $filme->getId() ?>" data-toggle="tooltip" title="Editar Filme" class="btn btn-danger">
+					Editar
+				</a>					
+				<a href="controle_filme.php?acao=deletar&id=<?= $filme->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o gênero?')">
+					Excluir
+				</a>
+			</li>
+		<?php } ?>
+		</ul>
+	</div>
+	</div>
+	
+<!-- <div class="row">
 	<table class="table table-hover table-bordered">
 		<thead>
 			<tr>
@@ -70,6 +113,6 @@ $diretorDAO = new DiretorDAO();
 			<?php } ?>
 		</tbody>
 	</table>	
-</div>
+</div> -->
 
 <?php include './layout/footer.php';?>

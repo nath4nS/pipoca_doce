@@ -49,7 +49,7 @@ $usuario = new Usuario();
 					
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="text" class="form-control" name="nome" value="<?=($usuario->getEmail() != '' ? $usuario->getEmail() : '')?>">
+				<input type="text" class="form-control" name="email" value="<?=($usuario->getEmail() != '' ? $usuario->getEmail() : '')?>">
 			</div>
 					
 			<div class="form-group">
