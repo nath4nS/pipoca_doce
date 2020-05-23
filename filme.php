@@ -14,13 +14,30 @@ $filmes = $filmeDAO->listar();
 $generoDAO = new GeneroDAO();
 $diretorDAO = new DiretorDAO();
 
+if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
+	$filmes = $filmeDAO->listar($_GET['pesquisa']);
+} else {
+	$filmes = $filmeDAO->listar();
+}
+
 ?>
 
-
 	<div class="row" style="margin-top:40px">
-		<div class="col-10">
+		<div class="col-6">
 			<h2>Gerenciar Filmes</h2>
 		</div>
+
+	<div class="col-4">
+		<form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um filme" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+		      	<i class="fas fa-search"></i>	
+		      </button>
+		      <a href="./filme.php" class="btn btn-outline-warning my-2 my-sm-0">
+		      	<i class="fas fa-trash-alt"></i>
+		      </a>
+	    </form>
+	</div>
 
 		<div class="col-2">
 			<a href="form_filme.php" class="btn btn-success">Novo Filme</a>

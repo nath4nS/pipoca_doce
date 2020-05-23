@@ -39,7 +39,13 @@ class FilmeDAO extends Model
     public function listar($pesquisa = '')
     {
         if($pesquisa != '') {
-            $sql = "SELECT * FROM {$this->tabela} ";
+            $sql = "SELECT * FROM {$this->tabela} 
+                        WHERE nome like '%{$pesquisa}%'
+                            OR genero like '%{$pesquisa}%'
+                            OR duracao like '%{$pesquisa}%'
+                            OR dataLancamento like '%{$pesquisa}%'
+                            OR elenco like '%{$pesquisa}%'
+                            OR diretor like '%{$pesquisa}%'";
         } else {
             $sql = "SELECT * FROM {$this->tabela}";
         }
