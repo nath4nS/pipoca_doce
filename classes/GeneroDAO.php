@@ -23,9 +23,9 @@ class GeneroDAO extends Model
 	public function listar($pesquisa = '')
 	{
 		if ($pesquisa != '') {
-			$sql = "SELECT * FROM {$this->tabela}
-					WHERE nome like '%{$pesquisa}%'
-						OR nome like '%{$pesquisa}%'";
+            $sql = "SELECT * FROM {$this->tabela} 
+                    WHERE nome like '%{$pesquisa}%'
+                        OR nome like '%{$pesquisa}%'";
 		} else {
 			$sql = "SELECT * FROM {$this->tabela}";
 		}

@@ -10,12 +10,19 @@ h3 {
     font-weight: 700;
 }
 
+/*Tabelas*/
 table thead tr {
 	text-align: center;
+    background: #343a40de;
+    color: #FFF;
+    font-size: 16px;
 }
 
 table tbody tr {
 	text-align: center;
+}
+.table{
+    background-color: #ffffff96;
 }
 
 /*Área de login*/
@@ -54,6 +61,18 @@ input[readonly] {
     margin-right: auto;
 }
 
+/*Dashboard*/
+.total {
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    color:  #27ae60;
+}
+.card-dashboard {
+    padding: 0;
+}
+
 /*Menu*/
 #navbarDropdown{
     color: #FFF;
@@ -61,6 +80,8 @@ input[readonly] {
     font-style: bold;
     font-weight: 600;
 }
+
+
 
 /*Filmes*/
 #filmeContainer {
@@ -76,4 +97,3 @@ input[readonly] {
     border-radius: 8px;
     position: relative;
 }
-

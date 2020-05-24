@@ -7,13 +7,31 @@ require 'classes/GeneroDAO.php';
 $generoDAO = new GeneroDAO();
 $generos = $generoDAO->listar();
 
+if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
+	$generos = $generoDAO->listar($_GET['pesquisa']);
+} else {
+	$generos = $generoDAO->listar();
+}
+
 ?>
 
 <div class="row" style="margin-top:40px">
-	<div class="col-10">
+	<div class="col-6">
 		<h2>Gerenciar Gêneros</h2>
 	</div>
 
+	<div class="col-4">
+		<form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um gênero" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+		      	<i class="fas fa-search"></i>	
+		      </button>
+		      <a href="./genero.php" class="btn btn-outline-warning my-2 my-sm-0">
+		      	<i class="fas fa-trash-alt"></i>
+		      </a>
+	    </form>
+	</div>
+	
 	<div class="col-2">
 		<a href="form_genero.php" class="btn btn-success">Novo Gênero</a>
 	</div>

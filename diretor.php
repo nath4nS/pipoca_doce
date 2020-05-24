@@ -7,11 +7,29 @@ require 'classes/DiretorDAO.php';
 $diretorDAO = new DiretorDAO();
 $diretores = $diretorDAO->listar();
 
+if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
+	$diretores = $diretorDAO->listar($_GET['pesquisa']);
+} else {
+	$diretores = $diretorDAO->listar();
+}
+
 ?>
 
 <div class="row" style="margin-top:40px">
-	<div class="col-10">
+	<div class="col-6">
 		<h2>Gerenciar Diretor</h2>
+	</div>
+
+	<div class="col-4">
+		<form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um diretor" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+		      	<i class="fas fa-search"></i>	
+		      </button>
+		      <a href="./diretor.php" class="btn btn-outline-warning my-2 my-sm-0">
+		      	<i class="fas fa-trash-alt"></i>
+		      </a>
+	    </form>
 	</div>
 
 	<div class="col-2">
