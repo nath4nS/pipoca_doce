@@ -38,7 +38,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 </div>
 <div class="row">
-	<table class="table table-hover table-bordered">
+	<table class="table table-hover table-responsive-lg">
 		<thead>
 			<tr>
 				<th></th>
@@ -46,7 +46,6 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<th>Nome</th>
 				<th>Data de Nascimento</th>
 				<th>Email</th>
-				<th>Senha</th>
 				<th>Tipo</th>
 				<th>Ações</th>
 			</tr>
@@ -63,7 +62,6 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $usuario->getNome() ?></td>
 				<td><?= $usuario->getDataNascimento() ?></td>
 				<td><?= $usuario->getEmail() ?></td>
-				<td><?= $usuario->getSenha() ?></td>
 				<td><?= $usuario->getTipo() ?></td>
 				<td>
 					<a href="form_usuario.php?id=<?= $usuario->getId() ?>" class="btn btn-danger">

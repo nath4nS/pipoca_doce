@@ -38,7 +38,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 </div>
 <div class="row">
-	<table class="table table-hover table-bordered">
+	<table class="table table-hover ttable-responsive-lg">
 		<thead>
 			<tr>
 				<th>#ID</th>

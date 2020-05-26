@@ -92,4 +92,6 @@ function showThumbnail(files) {
         reader.readAsDataURL(files[0]);
     }
 }
+
+$('input[name="dataNascimento"]').mask('99/99/9999');
 </script>

@@ -25,6 +25,10 @@ table tbody tr {
     background-color: #ffffff96;
 }
 
+.row {
+    margin-bottom: 15px;
+}
+
 /*Área de login*/
 .card-index {
     background: #000000bd;
