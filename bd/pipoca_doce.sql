@@ -51,7 +51,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `filme` (
   KEY `fk_diretor_idx` (`diretor`),
   CONSTRAINT `fk_diretor` FOREIGN KEY (`diretor`) REFERENCES `diretor` (`id`),
   CONSTRAINT `fk_genero` FOREIGN KEY (`genero`) REFERENCES `genero` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `filme` (
 
 LOCK TABLES `filme` WRITE;
 /*!40000 ALTER TABLE `filme` DISABLE KEYS */;
-INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1),(2,'Rambo: Programado para Matar',3,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais.','Sylvester Stallone, Richard Crenna, Brian Dennehy',3);
+INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1),(2,'Rambo: Programado para Matar',1,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais.','Sylvester Stallone, Richard Crenna, Brian Dennehy',2),(4,'Teste',2,'3h 0m','15 de junho de 2020','Teste php','DSSSSSSSS',1);
 /*!40000 ALTER TABLE `filme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,11 +132,13 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `senha` varchar(10) NOT NULL,
+  `dataNascimento` varchar(20) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
-  `tipo` tinyint(1) NOT NULL,
+  `senha` varchar(10) NOT NULL,
+  `tipo` varchar(15) NOT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,6 +147,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','1234','Administrador',NULL),(2,'Paulo ','25/03/1965','paulo@paulo','1234','Administrador',NULL),(3,'Teste','22/10/1980','teste@gmail.com','1234','Administrador','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -157,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-19 10:55:24
+-- Dump completed on 2020-05-26 19:10:53
