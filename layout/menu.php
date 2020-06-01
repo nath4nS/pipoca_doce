@@ -48,7 +48,7 @@
 	              		<strong>
 	               			<?= $_SESSION['nome'] ?>
 	              		</strong>
-              		<img src="/assets/img/usuario/<?= ($_SESSION['imagem'] != '' && file_exists('assets/img/usuario/'.$_SESSION['imagem']) ? $_SESSION['imagem'] : 'usuario.png' ) ?>" class="rounded-circle user-img-menu">
+              		<img src="./assets/img/usuario/<?= ($_SESSION['imagem'] != '' && file_exists('assets/img/usuario/'.$_SESSION['imagem']) ? $_SESSION['imagem'] : 'usuario.png' ) ?>" class="rounded-circle user-img-menu">
             		</a>
         			<small><a class="btn btn-outline-warning btn-sm" href="logout.php" onclick="return confirm('Deseja realmente sair?')">
         				Sair

@@ -65,10 +65,13 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $usuario->getTipo() ?></td>
 				<td>
 					<a href="form_usuario.php?id=<?= $usuario->getId() ?>" class="btn btn-danger">
-						Editar
+						<i class="fas fa-edit"></i>
 					</a>					
-					<a href="controle_usuario.php?acao=deletar&id=<?= $usuario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o gênero?')">
-						Excluir
+					<a href="controle_usuario.php?acao=deletar&id=<?= $usuario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o usuário?')">
+						<i class="fas fa-trash-alt"></i>
+					</a>
+					<a href="controle_usuar.php?acao=removeImagem&id=<?= $usuario->getId() ?>" onclick="return confirm('Deseja realmente remover a imagem?')" class="btn btn-danger" title="Remover imagem">
+						<i class="fas fa-folder-minus"></i>
 					</a>
 				</td>
 

@@ -55,10 +55,10 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $genero->getNome() ?></td>
 				<td>
 					<a href="form_genero.php?id=<?= $genero->getId() ?>" class="btn btn-danger">
-						Editar
+						<i class="fas fa-edit"></i>
 					</a>					
 					<a href="controle_genero.php?acao=deletar&id=<?= $genero->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o gênero?')">
-						Excluir
+						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>
 
