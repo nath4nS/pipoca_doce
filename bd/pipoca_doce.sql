@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pipoca_doce` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `pipoca_doce`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pipoca_doce
@@ -51,7 +49,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +58,7 @@ CREATE TABLE `diretor` (
 
 LOCK TABLES `diretor` WRITE;
 /*!40000 ALTER TABLE `diretor` DISABLE KEYS */;
-INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff'),(5,'');
+INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff');
 /*!40000 ALTER TABLE `diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,7 +136,7 @@ CREATE TABLE `usuario` (
   `tipo` varchar(15) NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-01 22:02:06
+-- Dump completed on 2020-06-02 18:12:25
