@@ -30,7 +30,7 @@ if($acao == 'deletar') {
 	$usuarioDAO->deletar($id);
 	$msg = 'Usuário excluído com sucesso';
 
-	header("Location: usuarios.php?msg=$msg");
+	header("Location: usuario.php?msg=$msg");
 
 } else if($acao == 'cadastrar') {
 
@@ -152,6 +152,6 @@ if($acao == 'deletar') {
 
 	$msg = 'Imagem removida com sucesso';
 	
-	header("Location: usuarios.php?msg=$msg");
+	header("Location: usuario.php?msg=$msg");
 
 }

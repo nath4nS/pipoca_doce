@@ -5,7 +5,7 @@ require 'classes/UsuarioDAO.php';
 $usuarioDAO = new UsuarioDAO();
 
 $email = $_POST['email'];
-$senha = ($_POST['senha']);
+$senha = md5($_POST['senha']);
 
 $usuario = $usuarioDAO->getLogin($email, $senha);
 
