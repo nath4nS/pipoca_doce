@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `pipoca_doce` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `pipoca_doce` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `pipoca_doce`;
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
@@ -51,7 +51,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `diretor` (
 
 LOCK TABLES `diretor` WRITE;
 /*!40000 ALTER TABLE `diretor` DISABLE KEYS */;
-INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff');
+INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff'),(5,'');
 /*!40000 ALTER TABLE `diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,11 +134,11 @@ CREATE TABLE `usuario` (
   `nome` varchar(45) NOT NULL,
   `dataNascimento` varchar(20) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
-  `senha` varchar(10) NOT NULL,
+  `senha` varchar(255) NOT NULL,
   `tipo` varchar(15) NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +147,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','1234','Administrador',NULL),(2,'Paulo ','25/03/1965','paulo@paulo','1234','Administrador',NULL),(3,'Teste','22/10/1980','teste@gmail.com','1234','Administrador','');
+INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','2d4d92f81c624d2cd06a232a5cb19958--avatar-20200531220514.jpg'),(2,'Paulo ','25/03/1965','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','cachorrinho-com-rayban-tumblr-salvepet-brunih-20200601230605.jpg'),(9,'Teste','15/06/2012','nathans@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -160,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-26 19:10:53
+-- Dump completed on 2020-06-01 22:02:06
