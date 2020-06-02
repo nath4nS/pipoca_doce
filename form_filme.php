@@ -40,7 +40,7 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" name="nome" value="<?=($filme->getNome() != '' ? $filme->getNome() : '')?>">
+				<input type="text" class="form-control" name="nome" required value="<?=($filme->getNome() != '' ? $filme->getNome() : '')?>">
 			</div>
 
 			<div class="form-group">
@@ -60,22 +60,22 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="duracao">Duracao</label>
-				<input type="text" class="form-control" name="duracao" value="<?=($filme->getDuracao() != '' ? $filme->getDuracao() : '')?>">
+				<input type="text" class="form-control" name="duracao" required value="<?=($filme->getDuracao() != '' ? $filme->getDuracao() : '')?>">
 			</div>
 
 			<div class="form-group">
 				<label for="dataLancamento">Data de Lancamento</label>
-				<input type="text" class="form-control" name="dataLancamento" value="<?=($filme->getDataLancamento() != '' ? $filme->getDataLancamento() : '')?>">
+				<input type="text" class="form-control" name="dataLancamento" required value="<?=($filme->getDataLancamento() != '' ? $filme->getDataLancamento() : '')?>">
 			</div>
 
 			<div class="form-group">
 				<label for="sinopse">Sinopse</label>
-				<textarea type="text" class="form-control" name="sinopse" rows="6"><?=($filme->getSinopse() != '' ? $filme->getSinopse() : '')?></textarea>
+				<textarea type="text" class="form-control" name="sinopse" required rows="6"><?=($filme->getSinopse() != '' ? $filme->getSinopse() : '')?></textarea>
 			</div>
 
 			<div class="form-group">
 				<label for="elenco">Elenco</label>
-				<input type="text" class="form-control" name="elenco" value="<?=($filme->getElenco() != '' ? $filme->getElenco() : '')?>">
+				<input type="text" class="form-control" name="elenco" required value="<?=($filme->getElenco() != '' ? $filme->getElenco() : '')?>">
 			</div>
 
 			<div class="form-group">

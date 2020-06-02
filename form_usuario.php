@@ -39,27 +39,27 @@ $usuario = new Usuario();
 
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" name="nome" value="<?=($usuario->getNome() != '' ? $usuario->getNome() : '')?>">
+				<input type="text" class="form-control" name="nome" required value="<?=($usuario->getNome() != '' ? $usuario->getNome() : '')?>">
 			</div>
 					
 			<div class="form-group">
 				<label for="dataNascimento">Data de nascimento</label>
-				<input type="text" class="form-control" name="dataNascimento" value="<?=($usuario->getDataNascimento() != '' ? $usuario->getDataNascimento() : '')?>">
+				<input type="text" class="form-control" name="dataNascimento" required value="<?=($usuario->getDataNascimento() != '' ? $usuario->getDataNascimento() : '')?>">
 			</div>
 					
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="text" class="form-control" name="email" value="<?=($usuario->getEmail() != '' ? $usuario->getEmail() : '')?>">
+				<input type="email" class="form-control" name="email" required value="<?=($usuario->getEmail() != '' ? $usuario->getEmail() : '')?>">
 			</div>
 					
 			<div class="form-group">
 				<label for="password">Senha</label>
-				<input type="password" class="form-control" name="senha" value="<?=($usuario->getSenha() != '' ? $usuario->getSenha() : '')?>">
+				<input type="password" class="form-control" name="senha" required value="<?=($usuario->getSenha() != '' ? $usuario->getSenha() : '')?>">
 			</div>
 
 			<div class="form-group">
 				<label for="tipo">Tipo</label>
-				<input type="text" class="form-control" name="tipo" value="<?=($usuario->getTipo() != '' ? $usuario->getTipo() : '')?>">
+				<input type="text" class="form-control" name="tipo" required value="<?=($usuario->getTipo() != '' ? $usuario->getTipo() : '')?>">
 			</div>
 
 			<div class="form-group">

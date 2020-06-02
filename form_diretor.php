@@ -30,7 +30,7 @@ $diretor = new Diretor();
 
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" name="nome" value="<?=($diretor->getNome() != '' ? $diretor->getNome() : '')?>">
+				<input type="text" class="form-control" name="nome" required value="<?=($diretor->getNome() != '' ? $diretor->getNome() : '')?>">
 			</div>
 
 			<div class="form-group">

@@ -30,7 +30,7 @@ $genero = new Genero();
 
 			<div class="form-group">
 				<label for="nome">Nome</label>
-				<input type="text" class="form-control" name="nome" value="<?=($genero->getNome() != '' ? $genero->getNome() : '')?>">
+				<input type="text" class="form-control" name="nome" required value="<?=($genero->getNome() != '' ? $genero->getNome() : '')?>">
 			</div>
 
 			<div class="form-group">
