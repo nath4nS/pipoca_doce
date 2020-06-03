@@ -18,13 +18,16 @@ class FilmeDAO extends Model
     				'{$filme->getDataLancamento()}', 
                     '{$filme->getSinopse()}', 
                     '{$filme->getElenco()}', 
-                    '{$filme->getDiretor()->getId()}'
+                    '{$filme->getDiretor()->getId()}',
+                    '{$filme->getImagem()}',
                     ";
     	return $this->inserir($values);
     }
 
     public function alteraFilme(Filme $filme) 
     {
+        $altera_imagem = ($filme->getImagem() != '' ? ", imagem = '{$filme->getImagem()}'" : '');
+
     	$values = 	"nome = '{$filme->getNome()}',
                     genero = '{$filme->getGenero()->getId()}',
                     duracao = '{$filme->getDuracao()}',
@@ -32,6 +35,7 @@ class FilmeDAO extends Model
     				sinopse = '{$filme->getSinopse()}',
     				elenco = '{$filme->getElenco()}',
     				diretor = '{$filme->getDiretor()->getId()}'
+                    {$altera_imagem}
     				";
     	$this->alterar($filme->getId(), $values);
     }

@@ -10,6 +10,7 @@ class Filme
 	private $sinopse;
 	private $elenco;
 	private $diretor;
+    private $imagem;
 
 	/**
      * @return mixed
@@ -169,6 +170,26 @@ class Filme
     public function setDiretor(Diretor $diretor)
     {
         $this->diretor = $diretor;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagem()
+    {
+        return $this->imagem;
+    }
+
+    /**
+     * @param mixed $imagem
+     *
+     * @return self
+     */
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
 
         return $this;
     }

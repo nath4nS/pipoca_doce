@@ -50,6 +50,9 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 			$diretor = $diretorDAO->get($filme->getDiretor());
 		?>
 			<li id="filme">
+				<strong></strong>
+				<img src="/assets/img/filme/<?= ($filme->getImagem() != '' && file_exists('assets/img/filme/'.$filme->getImagem()) ? $filme->getImagem() : 'filme.png') ?>" alt="">
+
 				<strong>ID:</strong>
 				<p><?= $filme->getId() ?></p>
 

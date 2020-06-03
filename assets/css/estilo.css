@@ -107,3 +107,23 @@ input[readonly] {
     border-radius: 8px;
     position: relative;
 }
+li img {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 5px;
+    width: 160px;
+}
+/*img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+*/
+/*img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}*/

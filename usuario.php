@@ -70,7 +70,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 					<a href="controle_usuario.php?acao=deletar&id=<?= $usuario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o usuário?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>
-					<a href="controle_usuar.php?acao=removeImagem&id=<?= $usuario->getId() ?>" onclick="return confirm('Deseja realmente remover a imagem?')" class="btn btn-danger" title="Remover imagem">
+					<a href="controle_usuario.php?acao=removeImagem&id=<?= $usuario->getId() ?>" onclick="return confirm('Deseja realmente remover a imagem?')" class="btn btn-danger" title="Remover imagem">
 						<i class="fas fa-folder-minus"></i>
 					</a>
 				</td>
