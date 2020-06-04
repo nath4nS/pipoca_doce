@@ -78,6 +78,7 @@ CREATE TABLE `filme` (
   `sinopse` text NOT NULL,
   `elenco` varchar(200) NOT NULL,
   `diretor` int NOT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_genero_idx` (`genero`),
   KEY `fk_diretor_idx` (`diretor`),
@@ -92,7 +93,7 @@ CREATE TABLE `filme` (
 
 LOCK TABLES `filme` WRITE;
 /*!40000 ALTER TABLE `filme` DISABLE KEYS */;
-INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1),(2,'Rambo: Programado para Matar',1,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais.','Sylvester Stallone, Richard Crenna, Brian Dennehy',2),(4,'Teste',2,'3h 0m','15 de junho de 2020','Teste php','DSSSSSSSS',1);
+INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1,'vigadores-20200603000631.jpg'),(2,'Rambo: Programado para Matar',1,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais. ','Sylvester Stallone, Richard Crenna, Brian Dennehy',2,'20527154-20200603000631.jpg'),(4,'Teste',2,'3h 0m','15 de junho de 2020','Teste php','DSSSSSSSS',1,'1-_A_Assistente-20200603000626.png');
 /*!40000 ALTER TABLE `filme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +146,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','2d4d92f81c624d2cd06a232a5cb19958--avatar-20200531220514.jpg'),(2,'Paulo ','25/03/1965','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','cachorrinho-com-rayban-tumblr-salvepet-brunih-20200601230605.jpg'),(9,'Teste','15/06/2012','nathans@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','');
+INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','84ef834f04e1b6c38ff6a50f25cf539a--edm-quotes-electronic-music-20200603000624.jpg'),(2,'Paulo ','25/03/1965','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','cachorrinho-com-rayban-tumblr-salvepet-brunih-20200601230605.jpg'),(9,'Teste','15/06/2012','nathans@gmail.com','ec6a6536ca304edf844d1d248a4f08dc','Administrador','--');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-02 18:12:25
+-- Dump completed on 2020-06-03 21:36:52

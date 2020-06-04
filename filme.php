@@ -59,7 +59,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<strong>Nome:</strong>
 				<p><?= $filme->getNome() ?></p>
 
-				<strong>Genêro:</strong>
+				<strong>Gênero:</strong>
 				<p><?= $genero->getNome() ?></p>
 												
 				<strong>Duração:</strong>
