@@ -54,7 +54,8 @@ $usuario = new Usuario();
 					
 			<div class="form-group">
 				<label for="password">Senha</label>
-				<input type="password" class="form-control" name="senha" required value="<?=($usuario->getSenha() != '' ? $usuario->getSenha() : '')?>">
+				<input type="password" name="senha" class="form-control" 
+					<?= ($usuario->getId() == '' ? ' required' : '' ) ?>>
 			</div>
 
 			<div class="form-group">

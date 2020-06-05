@@ -73,12 +73,12 @@ $filme = new filme();
 			</div>
 
 			<div class="form-group">
-				<label for="duracao">Duracao</label>
+				<label for="duracao">Duração</label>
 				<input type="text" class="form-control" name="duracao" required value="<?=($filme->getDuracao() != '' ? $filme->getDuracao() : '')?>">
 			</div>
 
 			<div class="form-group">
-				<label for="dataLancamento">Data de Lancamento</label>
+				<label for="dataLancamento">Data de Lançamento</label>
 				<input type="text" class="form-control" name="dataLancamento" required value="<?=($filme->getDataLancamento() != '' ? $filme->getDataLancamento() : '')?>">
 			</div>
 

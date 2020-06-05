@@ -49,7 +49,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `diretor` (
 
 LOCK TABLES `diretor` WRITE;
 /*!40000 ALTER TABLE `diretor` DISABLE KEYS */;
-INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff');
+INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Ted Kotcheff'),(8,'Jeff Fowler'),(9,'Bilall Fallah');
 /*!40000 ALTER TABLE `diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `filme` (
 
 LOCK TABLES `filme` WRITE;
 /*!40000 ALTER TABLE `filme` DISABLE KEYS */;
-INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1,'vigadores-20200603000631.jpg'),(2,'Rambo: Programado para Matar',1,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais. ','Sylvester Stallone, Richard Crenna, Brian Dennehy',2,'20527154-20200603000631.jpg'),(4,'Teste',2,'3h 0m','15 de junho de 2020','Teste php','DSSSSSSSS',1,'1-_A_Assistente-20200603000626.png');
+INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato',1,'3h 2m','25 de abril de 2019','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo',1,'vigadores-20200604000639.jpg'),(2,'Rambo: Programado para Matar',1,'1h 33m','6 de novembro de 1982','Um veterano da Guerra do Vietnã usa todo seu treinamento e agressividade exercitada nos campos de batalha quando é preso e torturado por policiais. ','Sylvester Stallone, Richard Crenna, Brian Dennehy',2,'20527154-20200603000631.jpg'),(4,'Sonic: O Filme',5,'1h 40m','13 de fevereiro de 2020','Sonic, o porco-espinho azul mais famoso do mundo, se junta com os seus amigos para derrotar o terrível Doutor Eggman, um cientista louco que planeja dominar o mundo, e o Doutor Robotnik, responsável por aprisionar animais inocentes em robôs.','James Marsden, Ben Schwartz, Tika Sumpter, Jim Carrey',8,'0121118-20200605210647.jpg');
 /*!40000 ALTER TABLE `filme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +146,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Nathan Sousa','15/06/2000','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','84ef834f04e1b6c38ff6a50f25cf539a--edm-quotes-electronic-music-20200603000624.jpg'),(2,'Paulo ','25/03/1965','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','cachorrinho-com-rayban-tumblr-salvepet-brunih-20200601230605.jpg'),(9,'Teste','15/06/2012','nathans@gmail.com','ec6a6536ca304edf844d1d248a4f08dc','Administrador','--');
+INSERT INTO `usuario` VALUES (1,'Pipoca Doce','08/06/2020','pipoca@doce','d41d8cd98f00b204e9800998ecf8427e','Administrador','84ef834f04e1b6c38ff6a50f25cf539a--edm-quotes-electronic-music-20200603000624.jpg'),(2,'Paulo ','24/06/2020','paulo@paulo','d41d8cd98f00b204e9800998ecf8427e','Administrador','cachorrinho-com-rayban-tumblr-salvepet-brunih-20200601230605.jpg'),(9,'Teste','29/06/2020','nathans@gmail.com','d41d8cd98f00b204e9800998ecf8427e','Administrador','--');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-03 21:36:52
+-- Dump completed on 2020-06-05 18:57:07
