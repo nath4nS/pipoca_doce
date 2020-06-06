@@ -19,7 +19,7 @@ class FilmeDAO extends Model
                     '{$filme->getSinopse()}', 
                     '{$filme->getElenco()}', 
                     '{$filme->getDiretor()->getId()}',
-                    '{$filme->getImagem()}',
+                    '{$filme->getImagem()}'
                     ";
     	return $this->inserir($values);
     }

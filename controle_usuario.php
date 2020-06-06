@@ -130,9 +130,8 @@ if($acao == 'deletar') {
 	$usuario->setNome($_POST['nome']);
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
-	$usuario->setSenha($_POST['senha']);
 	$usuario->setTipo($_POST['tipo']);
-
+	//print_r($usuario); exit;
 
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';

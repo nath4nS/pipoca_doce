@@ -74,6 +74,7 @@ if($acao == 'deletar') {
 	$filme->setElenco($_POST['elenco']);
 	$filme->setGenero($genero);
 	$filme->setDiretor($diretor);
+	/*print_r($filme); exit;*/
 
 	$id = $filmeDAO->insereFilme($filme);
 	$msg = 'filme cadastrado com sucesso';

@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Administrativo</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" >
 	<link rel="stylesheet" type="text/css" href="assets/css/all.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/estilo.css">
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
 	<style>
 		body {
 			background-image: url(assets/img/fundoLogin.jpg);

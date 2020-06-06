@@ -30,7 +30,6 @@ class UsuarioDAO extends Model
 		$values = "nome = '{$usuario->getNome()}',
 					dataNascimento = '{$usuario->getDataNascimento()}',
 					email = '{$usuario->getEmail()}',
-					senha = '{$usuario->getSenha()}',
 					tipo = '{$usuario->getTipo()}'
 					{$altera_imagem}
 					{$altera_senha}";

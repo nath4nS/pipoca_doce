@@ -22,14 +22,14 @@ if($acao == 'deletar') {
 
 	$diretor->setNome($_POST['nome']);
 
-	$id_diretor = $diretorDAO->insereDiretor($diretor);
+	$id = $diretorDAO->insereDiretor($diretor);
 	$msg = 'Diretor cadastrado com sucesso';
 
 	header("Location: form_diretor.php?id=$id&msg=$msg");
 
 } else if($acao == 'editar') {
 
-	$id_diretor = $_POST['id'];
+	$id = $_POST['id'];
 	
 	$diretor->setId($_POST['id']);
 	$diretor->setNome($_POST['nome']);
