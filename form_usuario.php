@@ -15,7 +15,7 @@ $usuario = new Usuario();
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6 offset-3">
-		<h2>Cadastrar Usuário</h2>
+		<h2>Cadastrar um novo usuário</h2>
 	</div>
 </div>
 	

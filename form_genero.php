@@ -15,7 +15,7 @@ $genero = new Genero();
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6 offset-3">
-		<h2>Cadastrar gênero</h2>
+		<h2>Cadastrar um novo gênero</h2>
 	</div>
 </div>
 

@@ -25,7 +25,7 @@ $filme = new filme();
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6 offset-3">
-		<h2>Cadastrar Filme</h2>
+		<h2>Cadastrar um novo filme</h2>
 	</div>
 </div>
 

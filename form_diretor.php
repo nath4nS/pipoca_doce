@@ -15,7 +15,7 @@ $diretor = new Diretor();
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6 offset-3">
-		<h2>Cadastrar Diretor</h2>
+		<h2>Cadastrar um novo diretor</h2>
 	</div>
 </div>
 
