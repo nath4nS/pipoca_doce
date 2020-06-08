@@ -55,6 +55,16 @@ class Usuario
      */
     public function getDataNascimento()
     {
+        if($this->dataNascimento != '') {
+            $data = explode('-', $this->dataNascimento);
+            $nova_data = $data[2] .'/'.$data[1] . '/' . $data[0];
+            return $nova_data;
+        }
+        return '';
+    }
+
+    public function getDataNascimentoBD()
+    {
         return $this->dataNascimento;
     }
 

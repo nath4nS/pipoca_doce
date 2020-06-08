@@ -13,7 +13,7 @@ class UsuarioDAO extends Model
 	public function insereUsuario(Usuario $usuario) {
 		$values = "null,
 				  '{$usuario->getNome()}',
-				  '{$usuario->getDataNascimento()}',
+				  '{$usuario->getDataNascimentoBD()}',
 				  '{$usuario->getEmail()}',
 				  '{$usuario->getSenha()}',
 				  '{$usuario->getTipo()}',
@@ -28,7 +28,7 @@ class UsuarioDAO extends Model
 		$altera_imagem = ($usuario->getImagem() != '' ? ", imagem = '{$usuario->getImagem()}'" : '');
 
 		$values = "nome = '{$usuario->getNome()}',
-					dataNascimento = '{$usuario->getDataNascimento()}',
+					dataNascimento = '{$usuario->getDataNascimentoBD()}',
 					email = '{$usuario->getEmail()}',
 					tipo = '{$usuario->getTipo()}'
 					{$altera_imagem}

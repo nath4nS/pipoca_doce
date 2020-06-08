@@ -44,7 +44,7 @@ $usuario = new Usuario();
 					
 			<div class="form-group">
 				<label for="dataNascimento">Data de nascimento</label>
-				<input type="text" class="form-control" name="dataNascimento" id="dataNascimento" required value="<?=($usuario->getDataNascimento() != '' ? $usuario->getDataNascimento() : '')?>">
+				<input type="date" class="form-control" name="dataNascimento" id="dataNascimento" value="<?=($usuario->getDataNascimento() != '' ? $usuario->getDataNascimentoBD() : '')?>">
 			</div>
 					
 			<div class="form-group">
@@ -93,5 +93,4 @@ function showThumbnail(files) {
     }
 }
 
-$('input[name="dataNascimento"]').mask('99/99/9999');
 </script>
