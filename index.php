@@ -1,79 +1,166 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Administrativo</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-	<link rel="stylesheet" type="text/css" href="assets/css/all.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/estilo.css">
-	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
-	<style>
-		body {
-			background-image: url(assets/img/fundoLogin.jpg);
-		}
-	</style>
-</head>
-<body>
-	
-<div class="container">
-<div class="row login">
-	<?php 
-	if(isset($_GET['msg']) && $_GET['msg'] != '') {
-	 echo '<div class="alert alert-danger col-4 offset-4">'.$_GET['msg'].'</div>';
-	}
-	?>
-</div>
-<div class="row">
-	<div class="col-4 offset-4 ">
-		<div class="card-index">
-			<div class="card-header">
-				<img src="assets/img/logo.png">
-				<br>
-				<h3 align="center">Administrativo</h3>
-			</div>
-			<div class="card-body">
-				<form action="login.php" method="post">
-					<div class="form-group row">
-						<input type="email" name="email" id="email" class="form-control" required onfocus="this.removeAttribute('readonly');" readonly autofocus placeholder="Email">
-					</div>
-					<div class="form-group row">
-						<!-- <label for="senha">Senha:</label> -->
-							<input type="password" name="senha" id="senha" class="form-control col-10" required onfocus="this.removeAttribute('readonly');" readonly placeholder="Senha">
-							<a href="#" class="btn-show-password btn btn-outline-secondary col-2" >
-								<i class="fas fa-eye"></i>
-							</a>
-					</div>
-					<br>
-					<div class="form-group row">
-						<button type="submit" class="button-login">Entrar</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+<?php 
+	include_once('layout/header.php');
+	include_once('layout/menu.php');
+?>
+
+
+
+<div id="trailer" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zQEjE_M2Esw?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Sonic: O Filme</h3>
+                <p>Sonic, o porco-espinho azul mais famoso do mundo, se junta com os seus amigos para derrotar o terrível Doutor Eggman, um cientista louco que planeja dominar o mundo, e o Doutor Robotnik, responsável por aprisionar animais inocentes em robôs.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vzMLBmG2lnc?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Aves de Rapina: Arlequina e Sua Emancipação Fantabulosa</h3>
+                <p>Depois de se aventurar com o Coringa, Arlequina se junta a Canário Negro, Caçadora e Renee Montoya para salvar a vida de uma garotinha do criminoso Máscara Negra em Gotham City.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LBRJhII2wu8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Mulan</h3>
+                <p>Quando o Imperador da China emite um decreto estabelecendo que um homem de cada família deve servir no exército imperial para defender o país dos invasores do Norte, Hua Mulan, a filha mais velha de um honrado guerreiro se apresenta no lugar de seu pai adoentado.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#trailer" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#trailer" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
 </div>
 
+<p>&nbsp;</p>
+
+<div class="row" id="fundo_branco">
+    <div class="col-9 offset-0">   
+        <h1>Populares</h1>
+    </div>
+    <div id="destaque" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" id="listagem">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/19/04/03/18/23/2539612.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/19/04/03/18/23/2539612.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/19/04/03/18/23/2539612.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/19/04/03/18/23/2539612.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/01/28/22/11/0608065.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/01/28/22/11/0608065.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/01/28/22/11/0608065.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/01/28/22/11/0608065.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#destaque" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#destaque" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
-<script>
-$(document).ready(function(){
-	$('.btn-show-password').on('click', function() {
-        var campoPassword = $('#senha');
-      	campoTipo = campoPassword.attr('type');
 
-      	if(campoTipo == 'password') {
-        	campoPassword.attr('type', 'text');
-        	$('.btn-show-password').html('<i class="fas fa-eye-slash"></i>');
-      	} else {
-      		campoPassword.attr('type', 'password');
-      		$('.btn-show-password').html('<i class="fas fa-eye"></i>');
-      	}
+<div class="row" id="fundo_branco">
+    <div class="col-9 offset-0">
+        <h1>Em Breve...</h1>
+    </div>
+    <div id="estreia" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" id="listagem">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/02/04/19/08/4847130.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/02/04/19/08/4847130.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/02/04/19/08/4847130.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://br.web.img3.acsta.net/pictures/20/02/04/19/08/4847130.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://i0.wp.com/pipocamoderna.com.br/wp-content/uploads/2020/03/wonder_woman_nineteen_eighty_four_ver7_xlg.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://i0.wp.com/pipocamoderna.com.br/wp-content/uploads/2020/03/wonder_woman_nineteen_eighty_four_ver7_xlg.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://i0.wp.com/pipocamoderna.com.br/wp-content/uploads/2020/03/wonder_woman_nineteen_eighty_four_ver7_xlg.jpg">
+                    </div>
+                    <div class="col-lg-3">
+                        <img id="cartaz" src="https://i0.wp.com/pipocamoderna.com.br/wp-content/uploads/2020/03/wonder_woman_nineteen_eighty_four_ver7_xlg.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#estreia" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#estreia" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+    <p>&nbsp;</p>
+</div>
 
-	});
-});
+<div class="row" id="fundo_cinza">
+    <div class="col-4 offset-5">
+        <h1>Projeto</h1>
+    </div>
+</div>
+<div class="row" id="fundo_cinza">
+    <p>&nbsp;</p>
+    <p>O sistema onde possamos ter uma comunidade, cheia de fóruns para a indicação de filmes, com área de filmes mais votados, com a interação do usuário podendo avaliar as melhores filmes e comentários.</p>
+</div>
+<div class="row" id="fundo_cinza">
+    <a href="#" id="canto_direito">+Informações</a>
+</div>
+
+<?php  
+	include_once('layout/footer.php');
+?>
+
+<script type="text/javascript">
+    $('.carousel').carousel({
+        interval: 0
+    })
 </script>
-</body>
-</html>

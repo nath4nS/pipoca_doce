@@ -1,14 +1,12 @@
-<?php require_once 'includes/validacao.php'; ?>
-<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pipoca-Doce</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="assets/css/all.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/estilo.css">
-</head>
-<body>
+<title>Pipoca Doce</title>
+<link rel="icon" href="assets/img/pipoquinha.png" type="image/x-icon" />
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+<body class="w3-black">
