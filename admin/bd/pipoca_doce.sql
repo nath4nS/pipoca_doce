@@ -49,7 +49,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `filme` (
   `duracao` varchar(20) NOT NULL,
   `dataLancamento` varchar(50) NOT NULL,
   `sinopse` text NOT NULL,
-  `elenco` varchar(200) NOT NULL,
+  `elenco` varchar(100) NOT NULL,
   `diretor` int NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -106,9 +106,9 @@ DROP TABLE IF EXISTS `genero`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `genero` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
+  `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,8 +130,8 @@ DROP TABLE IF EXISTS `usuario`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `dataNascimento` varchar(20) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `dataNascimento` date DEFAULT NULL,
   `email` varchar(45) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `tipo` varchar(15) NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Nathan Sousa','08/06/2020','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','Alpaca-Steam-Avatars-20200606010645.jpg'),(2,'Paulo ','24/06/2020','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','steam-avatar-profile-picture-1445-20200606000614.jpg'),(9,'Teste','29/06/2020','nathans@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','84ef834f04e1b6c38ff6a50f25cf539a--edm-quotes-electronic-music-20200605230659.jpg'),(12,'sfsdf','15/06/2003','nathans@gmail.com','c6dd60a67f164c8a38cf909467b7415a','3213123','');
+INSERT INTO `usuario` VALUES (1,'Nathan Sousa','2020-06-24','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','Alpaca-Steam-Avatars-20200606010645.jpg'),(2,'Paulo ','2020-06-15','paulo@paulo','81dc9bdb52d04dc20036dbd8313ed055','Administrador','steam-avatar-profile-picture-1445-20200606000614.jpg'),(9,'Teste','2020-06-20','nathans@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','Administrador','--'),(12,'sfsdf','2019-07-10','nathans@gmail.com','c6dd60a67f164c8a38cf909467b7415a','3213123','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-05 22:46:59
+-- Dump completed on 2020-06-09 21:52:45

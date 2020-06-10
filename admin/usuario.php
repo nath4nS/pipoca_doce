@@ -56,7 +56,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 			
 			<tr>
 				<td class="text-center">
-					<img src="/assets/img/usuario/<?= ($usuario->getImagem() != '' && file_exists('assets/img/usuario/'.$usuario->getImagem()) ? $usuario->getImagem() : 'usuario.png') ?>" alt="" width="50" class="rounded-circle">
+					<img src="assets/img/usuario/<?= ($usuario->getImagem() != '' && file_exists('assets/img/usuario/'.$usuario->getImagem()) ? $usuario->getImagem() : 'usuario.png') ?>" alt="" width="50" class="rounded-circle">
 				</td>
 				<td><?= $usuario->getId() ?></td>
 				<td><?= $usuario->getNome() ?></td>
