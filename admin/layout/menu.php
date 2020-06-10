@@ -2,7 +2,7 @@
 
 	<div class="container">
 		    <a class="navbar-brand" href="home.php">
-      			<img src="../assets/img/logo.png" width="82" height="54" alt="">  
+      			<img src="./assets/img/logo.png" width="82" height="54" alt="">  
     		</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       	<span class="navbar-toggler-icon"></span>
