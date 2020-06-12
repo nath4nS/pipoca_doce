@@ -6,11 +6,12 @@
 	<title>Administrativo</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" >
 	<link rel="stylesheet" type="text/css" href="assets/css/all.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles_login.css">
 	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
 	<style>
 		body {
 			background-image: url(assets/img/fundoLogin.jpg);
+			background-color: #f0f0f5;
 		}
 	</style>
 </head>
@@ -24,6 +25,7 @@
 	}
 	?>
 </div>
+<div class="logon-container">
 <div class="row">
 	<div class="col-4 offset-4 ">
 		<div class="card-index">
@@ -53,8 +55,11 @@
 		</div>
 	</div>
 </div>
-
 </div>
+		
+
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>

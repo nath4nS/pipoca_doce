@@ -30,7 +30,7 @@ table tbody tr {
 }
 
 /*Área de login*/
-.card-index {
+/*.card-index {
     background: #000000bd;
     border: 1px solid #6c757d96;
     border-radius: 14px;
@@ -63,7 +63,7 @@ input[readonly] {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
 /*Dashboard*/
 .total {
