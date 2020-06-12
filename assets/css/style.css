@@ -97,3 +97,7 @@ form
 {
 	background-color: #373636;
 }
+
+.form-control {
+	align-items: center;
+}
