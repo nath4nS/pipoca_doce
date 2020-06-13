@@ -3,8 +3,10 @@
 class Comentario
 {
 	private $id;
-	private $descricao;
-	private $data;
+	private $comentario;
+	private $data_comentario;
+    private $usuario_id;
+    private $filme_id;
 
     /**
      * @return mixed
@@ -29,19 +31,19 @@ class Comentario
     /**
      * @return mixed
      */
-    public function getDescricao()
+    public function getComentario()
     {
-        return $this->descricao;
+        return $this->comentario;
     }
 
     /**
-     * @param mixed $descricao
+     * @param mixed $comentario
      *
      * @return self
      */
-    public function setDescricao($descricao)
+    public function setComentario($comentario)
     {
-        $this->descricao = $descricao;
+        $this->comentario = $comentario;
 
         return $this;
     }
@@ -49,20 +51,60 @@ class Comentario
     /**
      * @return mixed
      */
-    public function getData()
+    public function getDataComentario()
     {
-        return $this->data;
+        return $this->data_comentario;
     }
 
     /**
-     * @param mixed $data
+     * @param mixed $data_comentario
      *
      * @return self
      */
-    public function setData($data)
+    public function setDataComentario($data_comentario)
     {
-        $this->data = $data;
+        $this->data_comentario = $data_comentario;
 
         return $this;
-    }	
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsuarioId()
+    {
+        return $this->usuario_id;
+    }
+
+    /**
+     * @param mixed $usuario_id
+     *
+     * @return self
+     */
+    public function setUsuarioId($usuario_id)
+    {
+        $this->usuario_id = $usuario_id;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFilmeId()
+    {
+        return $this->filme_id;
+    }
+
+    /**
+     * @param mixed $filme_id
+     *
+     * @return self
+     */
+    public function setFilmeId($filme_id)
+    {
+        $this->filme_id = $filme_id;
+
+        return $this;
+    }
 }

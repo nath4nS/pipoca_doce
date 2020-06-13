@@ -136,3 +136,8 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 </div> -->
 
 <?php include './layout/footer.php';?>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+</script>

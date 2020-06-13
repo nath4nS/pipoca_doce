@@ -20,8 +20,8 @@ if($acao == 'deletar') {
 
 } else if($acao == 'cadastrar') {
 
-	$comentario->setDescricao($_POST['descricao']);
-	$comentario->setData($_POST['data']);
+	$comentario->setComentario($_POST['comentario']);
+	$comentario->setDataComentario($_POST['data_comentario']);
 
 	$id = $comentario->insereComentario($comentario);
 	$msg = 'comentario cadastrado com sucesso';
@@ -33,8 +33,8 @@ if($acao == 'deletar') {
 	$id = $_POST['id'];
 	
 	$comentario->setId($_POST['id']);
-	$comentario->setDescricao($_POST['descricao']);
-	$comentario->setData($_POST['data']);
+	$comentario->setComentario($_POST['comentario']);
+	$comentario->setDataComentario($_POST['data_comentario']);
 
 	$comentario->alteraComentario($comentario);
 	$msg = 'comentario alterado com sucesso';

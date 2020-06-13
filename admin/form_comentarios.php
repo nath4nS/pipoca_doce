@@ -29,13 +29,13 @@ $comentario = new Comentario();
 			</div>
 
 			<div class="form-group">
-				<label for="descricao">Descrição</label>
-				<input type="text" class="form-control" name="descricao" required value="<?=($comentario->getDescricao() != '' ? $comentario->getDescricao() : '')?>">
+				<label for="comentario">Comentário</label>
+				<input type="text" class="form-control" name="comentario" required value="<?=($comentario->getComentario() != '' ? $comentario->getComentario() : '')?>">
 			</div>
 
 			<div class="form-group">
-				<label for="data">Data</label>
-				<input type="text" class="form-control" name="data" required value="<?=($comentario->getData() != '' ? $comentario->getData() : '')?>">
+				<label for="data_comentario">Data</label>
+				<input type="text" class="form-control" name="data_comentario" required value="<?=($comentario->getDataComentario() != '' ? $comentario->getDataComentario() : '')?>">
 			</div>
 
 			<div class="form-group">

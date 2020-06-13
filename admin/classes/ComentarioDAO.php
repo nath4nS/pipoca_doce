@@ -11,14 +11,17 @@ class ComentarioDAO extends Model
     }
 
 	public function insereComentario(Comentario $comentario) {
-		$values = "null, '{$comentario->getDescricao()}',
-						 '{$comentario->getData()}'";
+		$values = "null, '{$comentario->getComentario()}',
+						 '{$comentario->getDataComentario()}',
+						 '{$comentario->getUsuarioId()}',
+						 '{$comentario->getFilmeId()}'";
 		return $this->inserir($values);
 	}
 
 	public function alteraComentario(Comentario $comentario) {
-		$values = "descricao = '{$comentario->getDescricao()}',
-					    data = '{$comentario->getData()}'";
+		$values = "comentario = '{$comentario->getComentario()}',
+				   data_comentario = '{$comentario->getDataComentario()}'
+				   ";
 		$this->alterar($comentario->getId(), $values);
 	}
 
