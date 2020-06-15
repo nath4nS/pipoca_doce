@@ -2,10 +2,10 @@
 <?php include './layout/menu.php';?>
 <?php
 
-require 'classes/Comentario.php';
-require 'classes/ComentarioDAO.php';
-$comentarioDAO = new ComentarioDAO();
-$comentarios = $comentarioDAO->listar();
+require 'classes/Avaliacao.php';
+require 'classes/AvaliacaoDAO.php';
+$avaliacaoDAO = new AvaliacaoDAO();
+$avaliacoes = $avaliacaoDAO->listar();
 
 require 'classes/Usuario.php';
 require 'classes/UsuarioDAO.php';
@@ -18,33 +18,33 @@ $filmeDAO = new FilmeDAO();
 $filmes = $filmeDAO->listar();
 
 if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
-	$comentarios = $comentarioDAO->listar($_GET['pesquisa']);
+	$avaliacoes = $avaliacaoDAO->listar($_GET['pesquisa']);
 } else {
-	$comentarios = $comentarioDAO->listar();
+	$avaliacoes = $avaliacaoDAO->listar();
 }
 
 ?>
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6">
-		<h2>Gerenciar Comentário</h2>
+		<h2>Gerenciar Avaliações</h2>
 	</div>
 
 	<div class="col-4">
 		<form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um Comentario" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um avaliacao" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 		      	<i class="fas fa-search"></i>	
 		      </button>
-		      <a href="./comentario.php" class="btn btn-outline-warning my-2 my-sm-0">
+		      <a href="./avaliacao.php" class="btn btn-outline-warning my-2 my-sm-0">
 		      	<i class="fas fa-trash-alt"></i>
 		      </a>
 	    </form>
 	</div>
 
-	<div class="col-2">
-		<a href="form_comentarios.php" class="btn btn-success">Novo Comentário</a>
-	</div>
+<!-- 	<div class="col-2">
+		<a href="form_avaliacao.php" class="btn btn-success">Novo Comentário</a>
+	</div> -->
 
 </div>
 <div class="row">
@@ -52,7 +52,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 		<thead>
 			<tr>
 				<th>#ID</th>
-				<th>Comentário</th>
+				<th>Avaliação</th>
 				<th>Data</th>
 				<th>Usuário</th>
 				<th>Filme</th>
@@ -61,23 +61,23 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 		</thead>
 
 		<tbody>
-			<?php foreach ($comentarios as $comentario) { 
-				$usuario_id = $usuarioDAO->get($comentario->getUsuarioId());
-				$filme_id = $filmeDAO->get($comentario->getFilmeId());
+			<?php foreach ($avaliacoes as $avaliacao) { 
+				$usuario_id = $usuarioDAO->get($avaliacao->getUsuarioId());
+				$filme_id = $filmeDAO->get($avaliacao->getFilmeId());
 			?>
 			
 			<tr>
-				<td><?= $comentario->getId() ?></td>
-				<td><?= $comentario->getComentario() ?></td>
-				<td><?= $comentario->getDataComentario() ?></td>
+				<td><?= $avaliacao->getId() ?></td>
+				<td><?= $avaliacao->getavaliacao() ?></td>
+				<td><?= $avaliacao->getDataavaliacao() ?></td>
 				<td><?= $usuario_id->getNome() ?></td>
 				<td><?= $filme_id->getNome() ?></td>
 
 				<td>
-					<a href="form_comentarios.php?id=<?= $comentario->getId() ?>" class="btn btn-danger">
+					<a href="form_avaliacao.php?id=<?= $avaliacao->getId() ?>" class="btn btn-danger">
 						<i class="fas fa-edit"></i>
 					</a>					
-					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o comentario?')">
+					<a href="controle_avaliacao.php?acao=deletar&id=<?= $avaliacao->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o avaliacao?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>

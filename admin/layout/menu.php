@@ -31,6 +31,10 @@
         <li>
             <a href="comentarios.php"><i class="fas fa-comment"></i> Comentários</a>
         </li>
+
+        <li>
+            <a href="avaliacao.php"><i class="fa fa-star"></i></i> Avaliações</a>
+        </li>
      </ul>
 </nav>
 
