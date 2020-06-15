@@ -67,6 +67,12 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 							
 				<strong>Data de lançamento:</strong>
 				<p><?= $filme->getDataLancamento() ?></p>
+
+				<strong>Url(Trailer):</strong>
+				<p><?= $filme->getUrl() ?></p>
+
+				<strong>Tipo:</strong>
+				<p><?= $filme->getTipo() ?></p>
 							
 				<strong>Sinopse:</strong>
 				<p><?= $filme->getSinopse() ?></p>

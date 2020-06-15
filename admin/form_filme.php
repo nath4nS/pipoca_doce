@@ -83,6 +83,16 @@ $filme = new filme();
 			</div>
 
 			<div class="form-group">
+				<label for="url">Url(Trailer)</label>
+				<input type="text" class="form-control" name="url" required value="<?=($filme->getUrl() != '' ? $filme->getUrl() : '')?>">
+			</div>
+
+			<div class="form-group">
+				<label for="tipo">Tipo</label>
+				<input type="text" class="form-control" name="tipo" required value="<?=($filme->getTipo() != '' ? $filme->getTipo() : '')?>">
+			</div>
+
+			<div class="form-group">
 				<label for="sinopse">Sinopse</label>
 				<textarea type="text" class="form-control" name="sinopse" required rows="6"><?=($filme->getSinopse() != '' ? $filme->getSinopse() : '')?></textarea>
 			</div>

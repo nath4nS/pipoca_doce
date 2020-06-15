@@ -70,6 +70,8 @@ if($acao == 'deletar') {
 	$filme->setNome($_POST['nome']);
 	$filme->setDuracao($_POST['duracao']);
 	$filme->setDataLancamento($_POST['dataLancamento']);
+	$filme->setUrl($_POST['url']);
+	$filme->setTipo($_POST['tipo']);
 	$filme->setSinopse($_POST['sinopse']);
 	$filme->setElenco($_POST['elenco']);
 	$filme->setGenero($genero);
@@ -77,7 +79,7 @@ if($acao == 'deletar') {
 	/*print_r($filme); exit;*/
 
 	$id = $filmeDAO->insereFilme($filme);
-	$msg = 'filme cadastrado com sucesso';
+	$msg = 'Filme cadastrado com sucesso';
 
 	header("Location: form_filme.php?id=$id&msg=$msg");
 
@@ -134,6 +136,8 @@ if($acao == 'deletar') {
 	$filme->setNome($_POST['nome']);
 	$filme->setDuracao($_POST['duracao']);
 	$filme->setDataLancamento($_POST['dataLancamento']);
+	$filme->setUrl($_POST['url']);
+	$filme->setTipo($_POST['tipo']);
 	$filme->setSinopse($_POST['sinopse']);
 	$filme->setElenco($_POST['elenco']);
 	$filme->setGenero($genero);
@@ -141,7 +145,7 @@ if($acao == 'deletar') {
 	//print_r($filme); exit;
 
 	$filmeDAO->alteraFilme($filme);
-	$msg = 'filme alterado com sucesso';
+	$msg = 'Filme alterado com sucesso';
 
 	header("Location: form_filme.php?id=$id&msg=$msg");
 } else if($acao == 'removeImagem') {

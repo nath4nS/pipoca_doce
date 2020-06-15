@@ -16,6 +16,8 @@ class FilmeDAO extends Model
                     '{$filme->getGenero()->getId()}',
                     '{$filme->getDuracao()}',
     				'{$filme->getDataLancamento()}', 
+                    '{$filme->getUrl()}', 
+                    '{$filme->getTipo()}', 
                     '{$filme->getSinopse()}', 
                     '{$filme->getElenco()}', 
                     '{$filme->getDiretor()->getId()}',
@@ -32,7 +34,9 @@ class FilmeDAO extends Model
                     genero = '{$filme->getGenero()->getId()}',
                     duracao = '{$filme->getDuracao()}',
     				dataLancamento = '{$filme->getDataLancamento()}',
-    				sinopse = '{$filme->getSinopse()}',
+    				url = '{$filme->getUrl()}',
+                    tipo = '{$filme->getTipo()}',
+                    sinopse = '{$filme->getSinopse()}',
     				elenco = '{$filme->getElenco()}',
     				diretor = '{$filme->getDiretor()->getId()}'
                     {$altera_imagem}

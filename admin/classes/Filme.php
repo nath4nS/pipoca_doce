@@ -7,6 +7,8 @@ class Filme
 	private $genero;
     private $duracao;
 	private $dataLancamento;
+    private $url;
+    private $tipo;
 	private $sinopse;
 	private $elenco;
 	private $diretor;
@@ -108,6 +110,47 @@ class Filme
     public function setDataLancamento($dataLancamento)
     {
         $this->dataLancamento = $dataLancamento;
+
+        return $this;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     *
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * @param mixed $tipo
+     *
+     * @return self
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }
