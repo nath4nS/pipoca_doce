@@ -8,6 +8,7 @@
 	<title>Pipoca-Doce</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="assets/css/all.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/estilo.css">
 	<link rel="stylesheet" href="css/fontawesome.min.css">

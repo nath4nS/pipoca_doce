@@ -59,7 +59,7 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="genero">Gênero</label>
-				<select name="genero" id="genero" class="form-control" required>
+				<select name="genero[]" id="genero" class="js-example-basic-multiple form-control" multiple="multiple" required>
 					<option value="">Selecione um gênero</option>
 						<?php foreach($generos as $genero) : ?>
 							<option value="<?= $genero->getId(); ?>"
@@ -89,7 +89,7 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="tipo">Status</label>
-				<select type="text" class="form-control" name="tipo" required>
+				<select type="text" class="form-control" name="tipo">
 					<option value="">Selecione o status</option>
 						<option value="Em Breve">Em breve</option>
 						<option value="Lançado">Lançado</option>
@@ -108,7 +108,7 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="diretor">Diretor</label>
-				<select name="diretor" id="diretor" class="form-control" required>
+				<<select name="diretor[]" id="diretor" class="js-example-basic-multiple form-control" multiple="multiple" required>
 					<option value="">Selecione um diretor</option>
 						<?php foreach($diretores as $diretor) : ?>
 							<option value="<?= $diretor->getId(); ?>"
@@ -141,6 +141,10 @@ var fotopreview = document.getElementById('fotopreview');
 uploadfoto.addEventListener('change', function(e) {
 	fotopreview.src = '/assets/img/loading.gif';
     showThumbnail(this.files);
+});
+
+$(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
 });
 
 function showThumbnail(files) {
