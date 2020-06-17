@@ -27,7 +27,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 <div class="row" style="margin-top:40px">
 	<div class="col-6">
-		<h2>Gerenciar Comentário</h2>
+		<h2>Gerenciar Comentários</h2>
 	</div>
 
 	<div class="col-4">

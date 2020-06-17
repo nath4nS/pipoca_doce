@@ -83,13 +83,17 @@ $filme = new filme();
 			</div>
 
 			<div class="form-group">
-				<label for="url">Url(Trailer)</label>
+				<label for="url">URL do Trailer</label>
 				<input type="text" class="form-control" name="url" required value="<?=($filme->getUrl() != '' ? $filme->getUrl() : '')?>">
 			</div>
 
 			<div class="form-group">
-				<label for="tipo">Tipo</label>
-				<input type="text" class="form-control" name="tipo" required value="<?=($filme->getTipo() != '' ? $filme->getTipo() : '')?>">
+				<label for="tipo">Status</label>
+				<select type="text" class="form-control" name="tipo" required>
+					<option value="">Selecione o status</option>
+						<option value="Em Breve">Em breve</option>
+						<option value="Lançado">Lançado</option>
+				</select>
 			</div>
 
 			<div class="form-group">

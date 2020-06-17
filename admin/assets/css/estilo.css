@@ -71,8 +71,15 @@ input[readonly] {
     align-items: center;
     font-size: 50px;
     font-weight: bold;
-    color:  #27ae60;
+    color:  #e74c3c;
 }
+.total.comentarios {
+    color: #3498db;
+}
+.total.avaliacoes {
+    color: #FC0;
+}
+
 .card-dashboard {
     padding: 0;
 }
