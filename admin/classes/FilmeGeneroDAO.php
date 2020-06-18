@@ -16,10 +16,11 @@ class FilmeGeneroDAO extends Model
 		return $this->inserir($values);
 	}
 
-	public function alteraFilmeGenero(FilmeGenero $filme_genero) {
-		$values = "id_filme = '{$filme_genero->getIdFilme()}',
-				   id_genero = '{$filme_genero->getIdGenero()}'";
-		$this->alterar($filmeGenero->getId(), $values);
-	}
+    public function deletaGenero($id)
+    {
+    	$sql = "DELETE FROM {$this->tabela} WHERE id_filme = {$id}";
+    	$stmt = $this->db->prepare($sql);
+    	$stmt->execute();
+    }
 
 }

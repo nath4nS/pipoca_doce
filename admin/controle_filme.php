@@ -3,19 +3,19 @@ require 'classes/Filme.php';
 require 'classes/Genero.php';
 require 'classes/Diretor.php';
 require 'classes/FilmeGenero.php';
-require 'classes/FilmeDiretor.php';
+
 require 'classes/FilmeDAO.php';
 require 'classes/GeneroDAO.php';
 require 'classes/DiretorDAO.php';
 require 'classes/FilmeGeneroDAO.php';
-require 'classes/FilmeDiretorDAO.php';
+
 
 $filme = new Filme();
 $filmeDAO = new FilmeDAO();
 $generoDAO = new GeneroDAO();
 $diretorDAO = new DiretorDAO();
 $filmeGeneroDAO = new FilmeGeneroDAO();
-$FilmeDiretorDAO = new FilmeDiretorDAO();
+
 
 $acao = $_GET['acao'];
 $id = '';
@@ -70,7 +70,7 @@ if($acao == 'deletar') {
 		}
 	}
 
-	$genero = $generoDAO->get($_POST['genero']);
+	$genero = '';
 	$diretor = $diretorDAO->get($_POST['diretor']);
 
 	$filme->setNome($_POST['nome']);
@@ -85,6 +85,14 @@ if($acao == 'deletar') {
 	/*print_r($filme); exit;*/
 
 	$id = $filmeDAO->insereFilme($filme);
+
+	foreach($_POST['genero'] as $key => $value) {
+		$filmegenero = new FilmeGenero();
+		$filmegenero->setIdFilme($id); 
+		$filmegenero->setIdGenero($value); 
+
+		$filmeGeneroDAO->insereFilmeGenero($filmegenero);
+	}
 
 	$msg = 'Filme cadastrado com sucesso';
 	header("Location: form_filme.php?id=$id&msg=$msg");
@@ -149,6 +157,8 @@ if($acao == 'deletar') {
 	/*$filme->setGenero($genero);*/
 	/*$filme->setDiretor($diretor);*/
 
+	$filmeGeneroDAO->deletaGenero($filme->getId());
+
 	foreach($_POST['genero'] as $key => $value) {
 		$filmegenero = new FilmeGenero();
 		$filmegenero->setIdFilme($filme->getId()); 
@@ -156,13 +166,7 @@ if($acao == 'deletar') {
 
 		$filmeGeneroDAO->insereFilmeGenero($filmegenero);
 	}
-	foreach($_POST['diretor'] as $key => $value) {
-		$filmediretor = new FilmeDiretor();
-		$filmediretor->setIdFilme($filme->getId()); 
-		$filmediretor->setIdGenero($value); 
 
-		$filmeDiretorDAO->insereFilmeDiretor($filmediretor);
-	}
 	print_r($_POST); exit;
 
 	$filmeDAO->alteraFilme($filme);

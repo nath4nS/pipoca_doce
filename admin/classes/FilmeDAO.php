@@ -13,7 +13,7 @@ class FilmeDAO extends Model
     {
     	$values = "null, 
     				'{$filme->getNome()}',
-                    '{$filme->getGenero()->getId()}',
+                    '{$filme->getGenero()}',
                     '{$filme->getDuracao()}',
     				'{$filme->getDataLancamento()}', 
                     '{$filme->getUrl()}', 
@@ -31,7 +31,6 @@ class FilmeDAO extends Model
         $altera_imagem = ($filme->getImagem() != '' ? ", imagem = '{$filme->getImagem()}'" : '');
 
     	$values = 	"nome = '{$filme->getNome()}',
-                    genero = '{$filme->getGenero()->getId()}',
                     duracao = '{$filme->getDuracao()}',
     				dataLancamento = '{$filme->getDataLancamento()}',
     				url = '{$filme->getUrl()}',
@@ -47,19 +46,42 @@ class FilmeDAO extends Model
     public function listar($pesquisa = '')
     {
         if($pesquisa != '') {
-            $sql = "SELECT * FROM {$this->tabela} 
-                        WHERE nome like '%{$pesquisa}%'
-                            OR genero like '%{$pesquisa}%'
-                            OR duracao like '%{$pesquisa}%'
-                            OR dataLancamento like '%{$pesquisa}%'
-                            OR elenco like '%{$pesquisa}%'
-                            OR diretor like '%{$pesquisa}%'";
+            $sql = "SELECT f.*,group_concat(g.nome) as nome_genero FROM filme f 
+                        LEFT JOIN filme_genero fg on fg.id_filme = f.id
+                                LEFT JOIN genero g on g.id = fg.id_genero
+                                    WHERE f.nome like '%{$pesquisa}%'
+                                        OR f.genero like '%{$pesquisa}%'
+                                        OR f.duracao like '%{$pesquisa}%'
+                                        OR f.dataLancamento like '%{$pesquisa}%'
+                                        OR f.elenco like '%{$pesquisa}%'
+                                        OR f.diretor like '%{$pesquisa}%'
+                                            GROUP BY f.id;";
         } else {
-            $sql = "SELECT * FROM {$this->tabela}";
+            $sql = "SELECT f.*,group_concat(g.nome) as nome_genero FROM filme f 
+                        LEFT JOIN filme_genero fg on fg.id_filme = f.id
+                            LEFT JOIN genero g on g.id = fg.id_genero
+                                GROUP BY f.id;";
         }
         $stmt = $this->db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+        public function getGeneros($id)
+    {
+/*      $where = '';
+        if(condicao != '') {
+            $where = " WHERE {$condicao}";
+        }*/
+        $sql = "SELECT g.id, g.nome FROM filme f 
+                LEFT JOIN filme_genero fg on fg.id_filme = f.id
+                LEFT JOIN genero g on g.id = fg.id_genero
+                WHERE f.id = {$id};";
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Genero');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

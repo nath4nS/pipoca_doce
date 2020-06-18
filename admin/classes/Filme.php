@@ -67,7 +67,7 @@ class Filme
      *
      * @return self
      */
-    public function setGenero(Genero $genero)
+    public function setGenero($genero)
     {
         $this->genero = $genero;
 

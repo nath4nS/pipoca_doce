@@ -49,7 +49,6 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 	<div class="container">	
 		<ul id="filmeContainer">
 		<?php foreach ($filmes as $filme) { 
-			$genero = $generoDAO->get($filme->getGenero());
 			$diretor = $diretorDAO->get($filme->getDiretor());
 		?>
 			<li id="filme">
@@ -63,7 +62,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<p><?= $filme->getNome() ?></p>
 
 				<strong>Gênero:</strong>
-				<p><?= $genero->getNome() ?></p>
+				<p><?= $filme->nome_genero ?></p>
 												
 				<strong>Duração:</strong>
 				<p><?= $filme->getDuracao() ?></p>
