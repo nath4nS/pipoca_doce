@@ -4,14 +4,12 @@ class Filme
 {
 	private $id;
 	private $nome;
-	private $genero;
     private $duracao;
 	private $dataLancamento;
     private $url;
     private $tipo;
 	private $sinopse;
 	private $elenco;
-	private $diretor;
     private $imagem;
 
 	/**
@@ -50,26 +48,6 @@ class Filme
     public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
-    }
-
-	/**
-     * @return mixed
-     */
-    public function getGenero()
-    {
-        return $this->genero;
-    }
-
-    /**
-     * @param mixed $genero
-     *
-     * @return self
-     */
-    public function setGenero($genero)
-    {
-        $this->genero = $genero;
 
         return $this;
     }
@@ -113,7 +91,6 @@ class Filme
 
         return $this;
     }
-
 
     /**
      * @return mixed
@@ -191,28 +168,6 @@ class Filme
     public function setElenco($elenco)
     {
         $this->elenco = $elenco;
-
-        return $this;
-    }
-
-
-
-    /**
-     * @return mixed
-     */
-    public function getDiretor()
-    {
-        return $this->diretor;
-    }
-
-    /**
-     * @param mixed $diretor
-     *
-     * @return self
-     */
-    public function setDiretor(Diretor $diretor)
-    {
-        $this->diretor = $diretor;
 
         return $this;
     }

@@ -7,7 +7,6 @@ class Usuario
 	private $dataNascimento;
 	private $email;
 	private $senha;
-	private $tipo;
 	private $imagem;
 
     /**
@@ -116,26 +115,6 @@ class Usuario
     public function setSenha($senha)
     {
         $this->senha = md5($senha);
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTipo()
-    {
-        return $this->tipo;
-    }
-
-    /**
-     * @param mixed $tipo
-     *
-     * @return self
-     */
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
 
         return $this;
     }

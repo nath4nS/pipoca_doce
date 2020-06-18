@@ -16,7 +16,6 @@ class UsuarioDAO extends Model
 				  '{$usuario->getDataNascimentoBD()}',
 				  '{$usuario->getEmail()}',
 				  '{$usuario->getSenha()}',
-				  '{$usuario->getTipo()}',
 				  '{$usuario->getImagem()}'
 				  ";
 		return $this->inserir($values);
@@ -29,8 +28,7 @@ class UsuarioDAO extends Model
 
 		$values = "nome = '{$usuario->getNome()}',
 					dataNascimento = '{$usuario->getDataNascimentoBD()}',
-					email = '{$usuario->getEmail()}',
-					tipo = '{$usuario->getTipo()}'
+					email = '{$usuario->getEmail()}'
 					{$altera_imagem}
 					{$altera_senha}";
 		$this->alterar($usuario->getId(), $values);

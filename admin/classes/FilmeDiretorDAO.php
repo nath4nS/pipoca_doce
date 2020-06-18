@@ -12,14 +12,15 @@ class FilmeDiretorDAO extends Model
 
 	public function insereFilmeDiretor(FilmeDiretor $filme_diretor) {
 		$values = "null, '{$filme_diretor->getIdFilme()}',
-						 '{$filme_diretor->getIdGenero()}'";
+						 '{$filme_diretor->getIdDiretor()}'";
 		return $this->inserir($values);
 	}
 
-	public function alteraFilmeDiretor(FilmeDiretor $filme_diretor) {
-		$values = "id_filme = '{$filme_diretor->getIdFilme()}',
-				   id_genero = '{$filme_diretor->getIdGenero()}'";
-		$this->alterar($filmeDiretor->getId(), $values);
-	}
+    public function deletaDiretor($id)
+    {
+    	$sql = "DELETE FROM {$this->tabela} WHERE id_filme = {$id}";
+    	$stmt = $this->db->prepare($sql);
+    	$stmt->execute();
+    }
 
 }

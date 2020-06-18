@@ -13,7 +13,7 @@ if(isset($_GET['id']) && $_GET['id'] != '') {
 
 if($acao == 'deletar') {
 
-	$avaliacao->deletar($id);
+	$avaliacaoDAO->deletar($id);
 	$msg = 'Avaliacao excluído com sucesso';
 
 	header("Location: avaliacao.php?msg=$msg");

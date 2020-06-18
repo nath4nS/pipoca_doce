@@ -4,7 +4,7 @@ class FilmeDiretor
 {
 	private $id;
 	private $id_filme;
-    private $id_genero;
+    private $id_diretor;
 
     /**
      * @return mixed
@@ -49,19 +49,19 @@ class FilmeDiretor
     /**
      * @return mixed
      */
-    public function getIdGenero()
+    public function getIdDiretor()
     {
-        return $this->id_genero;
+        return $this->id_diretor;
     }
 
     /**
-     * @param mixed $id_genero
+     * @param mixed $id_diretor
      *
      * @return self
      */
-    public function setIdGenero($id_genero)
+    public function setIdDiretor($id_diretor)
     {
-        $this->id_genero = $id_genero;
+        $this->id_diretor = $id_diretor;
 
         return $this;
     }

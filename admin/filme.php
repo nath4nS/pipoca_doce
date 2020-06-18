@@ -6,16 +6,19 @@ require 'classes/Genero.php';
 require 'classes/Filme.php';
 require 'classes/Diretor.php';
 require 'classes/FilmeGenero.php';
+require 'classes/FilmeDiretor.php';
 require 'classes/GeneroDAO.php';
 require 'classes/FilmeDAO.php';
 require 'classes/DiretorDAO.php';
 require 'classes/FilmeGeneroDAO.php';
+require 'classes/FilmeDiretorDAO.php';
 
 $filmeDAO = new FilmeDAO();
 $filmes = $filmeDAO->listar();
 $generoDAO = new GeneroDAO();
 $diretorDAO = new DiretorDAO();
 $filmeGeneroDAO = new FilmeGeneroDAO();
+$filmeDiretorDAO = new FilmeDiretorDAO();
 
 if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 	$filmes = $filmeDAO->listar($_GET['pesquisa']);
@@ -48,9 +51,8 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 	<div class="container">	
 		<ul id="filmeContainer">
-		<?php foreach ($filmes as $filme) { 
-			$diretor = $diretorDAO->get($filme->getDiretor());
-		?>
+		<?php foreach ($filmes as $filme) { ?>
+
 			<li id="filme">
 				<strong></strong>
 				<img src="assets/img/filme/<?= ($filme->getImagem() != '' && file_exists('assets/img/filme/'.$filme->getImagem()) ? $filme->getImagem() : 'filme.png') ?>" alt="">
@@ -83,7 +85,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<p><?= $filme->getElenco() ?></p>
 							
 				<strong>Diretor:</strong>
-				<p><?= $diretor->getNome() ?></p>
+				<p><?= $filme->nome_diretor ?></p>
 
 				<a href="form_filme.php?id=<?= $filme->getId() ?>" data-toggle="tooltip" title="Editar Filme" class="btn btn-danger">
 					<i class="fas fa-edit"></i>

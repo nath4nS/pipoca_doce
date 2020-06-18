@@ -58,11 +58,6 @@ $usuario = new Usuario();
 			</div>
 
 			<div class="form-group">
-				<label for="tipo">Tipo</label>
-				<input type="text" class="form-control" name="tipo" id="tipo "required value="<?=($usuario->getTipo() != '' ? $usuario->getTipo() : '')?>">
-			</div>
-
-			<div class="form-group">
 				<button type="submit" class="btn btn-primary">Salvar</button>
 				<button type="reset" class="btn btn-warning">Resetar</button>
 			</div>

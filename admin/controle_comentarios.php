@@ -13,10 +13,10 @@ if(isset($_GET['id']) && $_GET['id'] != '') {
 
 if($acao == 'deletar') {
 
-	$comentario->deletar($id);
+	$comentarioDAO->deletar($id);
 	$msg = 'Diretor excluído com sucesso';
 
-	header("Location: diretor.php?msg=$msg");
+	header("Location: comentarios.php?msg=$msg");
 
 } else if($acao == 'cadastrar') {
 

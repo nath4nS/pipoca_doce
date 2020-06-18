@@ -21,6 +21,7 @@ $filme = new filme();
 		$filmeDAO = new FilmeDAO();
 		$filme = $filmeDAO->get($id);
 		$filmegeneros = $filmeDAO->getGeneros($filme->getId());
+		$filmediretores = $filmeDAO->getDiretor($filme->getId());
 	}
 ?>
 
@@ -97,8 +98,12 @@ $filme = new filme();
 				<label for="tipo">Status</label>
 				<select type="text" class="form-control" name="tipo">
 					<option value=""> Selecione o status</option>
-						<option value="Em Breve">Em breve</option>
-						<option value="Lançado">Lançado</option>
+						<option value="Em Breve" <?=($filme->getTipo() == 'Em Breve' ? 'selected' : '')?>>
+							Em breve
+						</option>
+						<option value="Lançado" <?=($filme->getTipo() == 'Lançado' ? 'selected' : '')?>> 
+							Lançado
+						</option>
 					</option>
 				</select>
 			</div>
@@ -117,12 +122,17 @@ $filme = new filme();
 				<label for="diretor">Diretor</label>
 				<<select name="diretor[]" id="diretor" class="js-example-basic-multiple form-control" multiple="multiple" required>
 					<option value="">Selecione um diretor</option>
+						<?php
+						if ($filme->getId()!= ''):
+						 foreach($filmediretores as $dir) : ?>
+							<option value="<?= $dir->getId(); ?>"
+								selected>
+								<?= $dir->getNome(); ?>	
+							</option>
+						<?php endforeach; endif; ?>
 						<?php foreach($diretores as $diretor) : ?>
-							<option value="<?= $diretor->getId(); ?>"
-								<?= ($filme->getDiretor() != '' && 
-								$filme->getDiretor() == $diretor->getId() 
-								? 'selected' : '') ?>>
-								<?= $diretor->getNome(); ?>
+							<option value="<?= $diretor->getId(); ?>">
+								<?= $diretor->getNome(); ?>	
 							</option>
 						<?php endforeach; ?>
 				</select>
