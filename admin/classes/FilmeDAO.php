@@ -54,14 +54,16 @@ class FilmeDAO extends Model
                                         OR f.dataLancamento like '%{$pesquisa}%'
                                         OR f.elenco like '%{$pesquisa}%'
                                         OR f.diretor like '%{$pesquisa}%'
-                                            GROUP BY f.id;";
+                                            GROUP BY f.id;
+                                            limit {$limit}";
         } else {
             $sql = "SELECT f.*,group_concat(distinct d.nome) as nome_diretor, group_concat(distinct g.nome) as nome_genero FROM filme f 
                         LEFT JOIN filme_genero fg on fg.id_filme = f.id
                         LEFT JOIN genero g on g.id = fg.id_genero
                         LEFT JOIN filme_diretor fd on fd.id_filme = f.id
                         LEFT JOIN diretor d on d.id = fd.id_diretor
-                                GROUP BY f.id;";
+                                GROUP BY f.id;
+                                limit {$limit}";
         }
         $stmt = $this->db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);

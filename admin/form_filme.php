@@ -121,7 +121,7 @@ $filme = new filme();
 			<div class="form-group">
 				<label for="diretor">Diretor</label>
 				<<select name="diretor[]" id="diretor" class="js-example-basic-multiple form-control" multiple="multiple" required>
-					<option value="">Selecione um diretor</option>
+					<option>Selecione um diretor</option>
 						<?php
 						if ($filme->getId()!= ''):
 						 foreach($filmediretores as $dir) : ?>
