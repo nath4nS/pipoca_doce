@@ -88,7 +88,7 @@ CREATE TABLE `diretor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `diretor` (
 
 LOCK TABLES `diretor` WRITE;
 /*!40000 ALTER TABLE `diretor` DISABLE KEYS */;
-INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Niki Caro');
+INSERT INTO `diretor` VALUES (1,'Anthony Russo'),(2,'Joe Russo'),(3,'Niki Caro'),(4,'Justin Lin'),(5,'Jeff Fowler'),(6,'Cate Shortland'),(7,'Bilall Fallah'),(8,'Adil El Arbi'),(9,'Cathy Yan'),(10,'Todd Phillips');
 /*!40000 ALTER TABLE `diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `filme` (
   `elenco` varchar(100) NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `filme` (
 
 LOCK TABLES `filme` WRITE;
 /*!40000 ALTER TABLE `filme` DISABLE KEYS */;
-INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato','3h 2m','25 de abril de 2019 ','https://www.youtube.com/embed/g6ng8iy-l0U','Lançado','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo','vigadores-20200619000638.jpg'),(2,'Mulan','1h 55m','23 de julho de 2020 ','https://www.youtube.com/embed/LBRJhII2wu8','Em Breve','Em Mulan, Hua Mulan (Liu Yifei) é a espirituosa e determinada filha mais velha de um honrado guerreiro. Quando o Imperador da China emite um decreto que um homem de cada família deve servir no exército imperial, Mulan decide tomar o lugar de seu pai, que está doente. Assumindo a identidade de Hua Jun, ela se disfarça de homem para combater os invasores que estão atacando sua nação, provando-se uma grande guerreira.','Yifei Liu, Donnie Yen, Jason Scott Lee','0409486-20200619000641.jpg');
+INSERT INTO `filme` VALUES (1,'Vingadores: Ultimato','3h 2m','25 de abril de 2019 ','https://www.youtube-nocookie.com/embed/g6ng8iy-l0U?controls=0','Lançado','Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.','Robert Downey Jr., Chris Evans, Mark Ruffalo','vigadores-20200619000638.jpg'),(2,'Mulan','1h 55m','23 de julho de 2020 ','https://www.youtube-nocookie.com/embed/LBRJhII2wu8?controls=0','Em Breve','Em Mulan, Hua Mulan (Liu Yifei) é a espirituosa e determinada filha mais velha de um honrado guerreiro. Quando o Imperador da China emite um decreto que um homem de cada família deve servir no exército imperial, Mulan decide tomar o lugar de seu pai, que está doente. Assumindo a identidade de Hua Jun, ela se disfarça de homem para combater os invasores que estão atacando sua nação, provando-se uma grande guerreira.','Yifei Liu, Donnie Yen, Jason Scott Lee','0409486-20200619000641.jpg'),(3,'Velozes e Furiosos 9','2h 15m','20 de maio de 2020','https://www.youtube-nocookie.com/embed/NnDGWyfP7q4?controls=0','Lançado','Nono filme da série Velozes & Furiosos, e segundo da nova trilogia (Velozes 8, 9 e 10), que não conta mais com a presença de Paul Walker, falecido em 2013. O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto (Vin Diesel). ','Vin Diesel, Michelle Rodriguez, Jordana Brewster','images-20200619010605.jpg'),(4,'Sonic: O Filme','1h 40m','13 de fevereiro de 2020','https://www.youtube-nocookie.com/embed/zQEjE_M2Esw?controls=0','Lançado','Sonic, o porco-espinho azul mais famoso do mundo, se junta com os seus amigos para derrotar o terrível Doutor Eggman, um cientista louco que planeja dominar o mundo, e o Doutor Robotnik, responsável por aprisionar animais inocentes em robôs.','Jim Carrey, James Marsden, Tika Sumpter','0121118-20200605210647-20200619010608.jpg'),(5,'Viúva Negra','2h','29 de outubro de 2020','https://www.youtube-nocookie.com/embed/Lk7LPTq0_XY?controls=0','Em Breve','Em Viúva Negra, após seu nascimento, Natasha Romanoff (Scarlett Johansson) é dada à KGB, que a prepara para se tornar sua agente definitiva. Quando a URSS rompe, o governo tenta matá-la enquanto a ação se move para a atual Nova York, onde ela trabalha como freelancer. ','Scarlett Johansson, Florence Pugh, David Harbour','images (1)-20200619010616.jpg'),(6,'Bad Boys para Sempre','2h 4m','30 de janeiro de 2020','https://www.youtube-nocookie.com/embed/jCCGGYvFjlw?controls=0','Lançado','Os policiais Mike Lowery e Marcus Burnett se juntam para derrubar o líder de um cartel de drogas em Miami. A recém-criada equipe de elite do departamento de polícia de Miami, ao lado de Mike e Marcus, enfrenta o implacável Armando Armas.','Will Smith, Martin Lawrence, Vanessa Hudgens','bbps_640x940-data-20200606010612-20200619010627.jpg'),(7,'Aves de Rapina','1h 49m','6 de fevereiro de 2020','https://www.youtube-nocookie.com/embed/XS0mcsu8G3I?controls=0','Lançado','Arlequina narra os eventos de sua vida: algum tempo após a derrota da Magia, o Coringa termina com Arlequina, jogando-a nas ruas de Gotham City. Ela é acolhida por Doc, o idoso dono de um restaurante chinês.','Margot Robbie, Mary Elizabeth, Winstead Jurnee, Smollett Bell','5316438-20200619010651.jpg'),(8,'Coringa','2h 2m','3 de outubro de 2019','https://www.youtube-nocookie.com/embed/621pfj0EfIc?controls=0','Lançado','Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.','Joaquin Phoenix, Robert De Niro, Zazie Beetz','images (2)-20200619010654.jpg');
 /*!40000 ALTER TABLE `filme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `filme_diretor` (
   KEY `fk_filme_diretor_filme_idx` (`id_filme`),
   CONSTRAINT `fk_filme_diretor_filme` FOREIGN KEY (`id_filme`) REFERENCES `filme` (`id`),
   CONSTRAINT `fk_filme_genero_diretor` FOREIGN KEY (`id_diretor`) REFERENCES `diretor` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `filme_diretor` (
 
 LOCK TABLES `filme_diretor` WRITE;
 /*!40000 ALTER TABLE `filme_diretor` DISABLE KEYS */;
-INSERT INTO `filme_diretor` VALUES (1,1,1),(2,1,2),(3,2,3);
+INSERT INTO `filme_diretor` VALUES (17,6,7),(18,6,8),(19,2,3),(20,1,1),(21,1,2),(23,3,4),(24,4,5),(26,5,6),(29,7,9),(30,8,10);
 /*!40000 ALTER TABLE `filme_diretor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +177,7 @@ CREATE TABLE `filme_genero` (
   KEY `fk_filme_genero_filme_idx` (`id_filme`),
   CONSTRAINT `fk_filme_genero_filme` FOREIGN KEY (`id_filme`) REFERENCES `filme` (`id`),
   CONSTRAINT `fk_filme_genero_genero` FOREIGN KEY (`id_genero`) REFERENCES `genero` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +186,7 @@ CREATE TABLE `filme_genero` (
 
 LOCK TABLES `filme_genero` WRITE;
 /*!40000 ALTER TABLE `filme_genero` DISABLE KEYS */;
-INSERT INTO `filme_genero` VALUES (1,1,1),(2,1,16),(3,2,1),(4,2,3);
+INSERT INTO `filme_genero` VALUES (24,6,1),(25,6,5),(26,2,1),(27,2,3),(28,1,1),(29,1,16),(32,3,1),(33,3,3),(34,4,5),(38,5,1),(39,5,3),(40,5,13),(43,7,1),(44,8,12);
 /*!40000 ALTER TABLE `filme_genero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-18 21:46:59
+-- Dump completed on 2020-06-18 22:56:14

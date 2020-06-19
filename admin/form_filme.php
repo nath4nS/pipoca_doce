@@ -97,7 +97,7 @@ $filme = new filme();
 			<div class="form-group">
 				<label for="tipo">Status</label>
 				<select type="text" class="form-control" name="tipo">
-					<option value=""> Selecione o status</option>
+					<option value="">Selecione o status</option>
 						<option value="Em Breve" <?=($filme->getTipo() == 'Em Breve' ? 'selected' : '')?>>
 							Em breve
 						</option>
@@ -120,7 +120,7 @@ $filme = new filme();
 
 			<div class="form-group">
 				<label for="diretor">Diretor</label>
-				<<select name="diretor[]" id="diretor" class="js-example-basic-multiple form-control" multiple="multiple" required>
+				<select name="diretor[]" id="diretor" class="js-example-basic-multiple form-control" multiple="multiple" required>
 					<option>Selecione um diretor</option>
 						<?php
 						if ($filme->getId()!= ''):
