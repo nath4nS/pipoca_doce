@@ -69,7 +69,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 			<tr>
 				<td><?= $avaliacao->getId() ?></td>
 				<td>
-					<img src="./assets/img/estrelas/<?= $avaliacao->getavaliacao() ?>.png">
+					<img style="width: 100px" src="./assets/img/estrelas/<?= $avaliacao->getavaliacao() ?>.png">
 				</td>
 				<td><?= $avaliacao->getDataavaliacao() ?></td>
 				<td><?= $usuario_id->getNome() ?></td>

@@ -54,7 +54,7 @@ class FilmeDAO extends Model
                                         OR f.dataLancamento like '%{$pesquisa}%'
                                         OR f.elenco like '%{$pesquisa}%'
                                         OR f.diretor like '%{$pesquisa}%'
-                                            GROUP BY f.id;
+                                            GROUP BY f.id
                                             limit {$limit}";
         } else {
             $sql = "SELECT f.*,group_concat(distinct d.nome) as nome_diretor, group_concat(distinct g.nome) as nome_genero FROM filme f 

@@ -25,7 +25,7 @@ class AvaliacaoDAO extends Model
 		$this->alterar($avaliacao->getId(), $values);
 	}
 
-	public function listar($pesquisa = '')
+		public function listar($pesquisa = '')
 	{
 		if ($pesquisa != '') {
 			$sql = "SELECT * FROM {$this->tabela}
@@ -34,6 +34,17 @@ class AvaliacaoDAO extends Model
 		} else {
 			$sql = "SELECT * FROM {$this->tabela}";
 		}
+		$stmt = $this->db->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+	public function listarAvaliacao($id_filme)
+	{
+
+			$sql = "SELECT  round(avg(avaliacao)) as avaliacao FROM {$this->tabela}
+					WHERE filme_id = '{$id_filme}'";
 		$stmt = $this->db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
 		$stmt->execute();
