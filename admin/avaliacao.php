@@ -32,7 +32,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 	<div class="col-4">
 		<form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um avaliacao" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um avaliação" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 		      	<i class="fas fa-search"></i>	
 		      </button>

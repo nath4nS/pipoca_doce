@@ -75,7 +75,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<strong>URL do Trailer:</strong>
 				<p><?= $filme->getUrl() ?></p>
 
-				<strong>Tipo:</strong>
+				<strong>Status:</strong>
 				<p><?= $filme->getTipo() ?></p>
 							
 				<strong>Sinopse:</strong>
