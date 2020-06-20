@@ -7,7 +7,7 @@ class Conexao
 	private $conn;
 
 	public function __construct() {
-		$this->host = 'mysql:host=localhost;dbname=pipoca';
+		$this->host = 'mysql:host=localhost;dbname=pipoca_doce';
 		$this->user = 'root';
 		$this->password = 'root';
 	}
