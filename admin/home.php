@@ -8,6 +8,7 @@ $total_usuarios = $relatorioDAO->contar('usuario');
 $total_filmes = $relatorioDAO->contar('filme');
 $total_comentarios = $relatorioDAO->contar('comentario');
 $total_avaliacoes = $relatorioDAO->contar('avaliacao');
+
 ?>
 
 <div class="row col">
@@ -50,5 +51,6 @@ $total_avaliacoes = $relatorioDAO->contar('avaliacao');
 
 
 <?php include './layout/footer.php';  ?>
+
 
 

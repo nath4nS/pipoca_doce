@@ -62,14 +62,14 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $usuario->getDataNascimento() ?></td>
 				<td><?= $usuario->getEmail() ?></td>
 				<td>
-					<a href="form_usuario.php?id=<?= $usuario->getId() ?>" class="btn btn-danger">
+					<a href="form_usuario.php?id=<?= $usuario->getId() ?>" class="btn btn-warning" title="Editar usuário">
 						<i class="fas fa-edit"></i>
 					</a>					
-					<a href="controle_usuario.php?acao=deletar&id=<?= $usuario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o usuário?')">
-						<i class="fas fa-trash-alt"></i>
+					<a href="controle_usuario.php?acao=removeImagem&id=<?= $usuario->getId() ?>" class="btn btn-danger" title="Remover imagem" onclick="return confirm('Deseja realmente remover a imagem?')">
+						<i class="fa fa-user-times"></i>
 					</a>
-					<a href="controle_usuario.php?acao=removeImagem&id=<?= $usuario->getId() ?>" onclick="return confirm('Deseja realmente remover a imagem?')" class="btn btn-danger" title="Remover imagem">
-						<i class="fas fa-folder-minus"></i>
+					<a href="controle_usuario.php?acao=deletar&id=<?= $usuario->getId() ?>" class="btn btn-danger" title="Remover usuário" onclick="return confirm('Deseja realmente exluir o usuário?')">
+						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>
 

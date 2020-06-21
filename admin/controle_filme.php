@@ -4,12 +4,16 @@ require 'classes/Genero.php';
 require 'classes/Diretor.php';
 require 'classes/FilmeGenero.php';
 require 'classes/FilmeDiretor.php';
+require 'classes/Avaliacao.php';
+require 'classes/Comentario.php';
 
 require 'classes/FilmeDAO.php';
 require 'classes/GeneroDAO.php';
 require 'classes/DiretorDAO.php';
 require 'classes/FilmeGeneroDAO.php';
 require 'classes/FilmeDiretorDAO.php';
+require 'classes/AvaliacaoDAO.php';
+require 'classes/ComentarioDAO.php';
 
 
 $filme = new Filme();
@@ -18,6 +22,8 @@ $generoDAO = new GeneroDAO();
 $diretorDAO = new DiretorDAO();
 $filmeGeneroDAO = new FilmeGeneroDAO();
 $filmeDiretorDAO = new FilmeDiretorDAO();
+$avaliacaoDAO = new AvaliacaoDAO();
+$comentarioDAO = new ComentarioDAO();
 
 
 $acao = $_GET['acao'];
@@ -41,6 +47,8 @@ if($acao == 'deletar') {
 
 	$filmeGeneroDAO->deletaGenero($id);
 	$filmeDiretorDAO->deletaDiretor($id);
+	$avaliacaoDAO->deletaAvaliacao($id);
+	$comentarioDAO->deletaComentario($id);
 	$filmeDAO->deletar($id);
 
 	$msg = 'Filme excluído com sucesso';

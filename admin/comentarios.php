@@ -74,10 +74,10 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $filme_id->getNome() ?></td>
 
 				<td>
-					<a href="form_comentarios.php?id=<?= $comentario->getId() ?>" class="btn btn-danger">
+					<a href="form_comentarios.php?id=<?= $comentario->getId() ?>" class="btn btn-warning">
 						<i class="fas fa-edit"></i>
 					</a>					
-					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" class="btn btn-warning" onclick="return confirm('Deseja realmente exluir o comentario?')">
+					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o comentario?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>

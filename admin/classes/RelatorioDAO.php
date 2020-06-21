@@ -17,4 +17,20 @@ class RelatorioDAO extends Model
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
+
+/*	public function contarFilmesGenero($table = 'filme', $condicao = '')
+    {
+        $where = '';
+        if($condicao != '') {
+            $where = "WHERE {$condicao}";
+        }
+        $sql = "SELECT g.nome as genero, count(*) as total 
+                FROM {$table} f
+                LEFT JOIN genero g ON g.id = f.genero
+                {$where}
+                GROUP BY f.genero;";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);  
+    }*/
 }
