@@ -11,7 +11,7 @@ $usuario = $usuarioDAO->getLogin($email, $senha);
 
 if(empty($usuario)) {
 	session_destroy();
-	$msg = 'Usuário não encontrado';
+	$msg = 'Falha no login, tente novamente!';
 	header("Location: index.php?msg=$msg");
 } else {
 	$_SESSION['nome'] = $usuario->getNome();

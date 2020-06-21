@@ -16,7 +16,9 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand" href="home.php" style="margin-left: 35px;">Pipoca Doce</a>
+		<a class="navbar-brand" href="home.php" style="margin-left: 17px;">
+			<img src=./assets/img/logo1.png style="width: 160px"/>
+		</a>
 
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
@@ -27,7 +29,7 @@
 	              		</strong>
               		<img src="./assets/img/usuario/<?= ($_SESSION['imagem'] != '' && file_exists('assets/img/usuario/'.$_SESSION['imagem']) ? $_SESSION['imagem'] : 'usuario.png' ) ?>" class="rounded-circle user-img-menu">
             		</a>
-        			<small><a class="btn btn-outline-warning btn-sm" href="logout.php" onclick="return confirm('Deseja realmente sair?')">
+        			<small><a class="btn btn-outline-danger btn-sm" href="logout.php" onclick="return confirm('Deseja realmente sair?')">
         				Sair
         			</a>
         			</small>
