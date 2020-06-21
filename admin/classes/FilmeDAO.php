@@ -62,7 +62,7 @@ class FilmeDAO extends Model
                         LEFT JOIN genero g on g.id = fg.id_genero
                         LEFT JOIN filme_diretor fd on fd.id_filme = f.id
                         LEFT JOIN diretor d on d.id = fd.id_diretor
-                                GROUP BY f.id;
+                                GROUP BY f.id
                                 limit {$limit}";
         }
         $stmt = $this->db->prepare($sql);

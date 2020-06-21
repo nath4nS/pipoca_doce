@@ -120,3 +120,95 @@ form
 	left: 693px;
 }
 
+.owl-dots
+{
+	top: 77%;
+    left: 50%;
+    position: absolute;
+
+}
+
+img.filme_pag
+{
+	margin-left: 90px;
+	width: 426px;
+	float: left;
+	display: inline-block;
+}
+
+h1.filme_pag
+{
+	margin-left: 19%;
+    display: inline-block;
+}
+.afasta_top
+{
+	margin-top: 38px;
+}
+
+p.filme_pag
+{
+	text-align: justify;
+    margin-top: 51px;
+    margin-right: 96px;
+}
+
+#elenco
+{
+	text-align: justify;
+}
+
+#diretor
+{
+	text-align: justify;
+}
+
+.estrela
+{
+	margin-left: 230px;
+    width: 130px;
+    margin-top: 15px;
+}
+
+.genero 
+{
+	margin-left: 75px;
+}
+
+.roxo
+{
+	background-color: #6a009e;
+}
+.verde
+{
+	background-color: #28a745;
+}
+.vermelho
+{
+	background-color: #dc3545;
+}
+.azul
+{
+	background-color: #007bff;
+}
+.laranja
+{
+	background-color: #f9a54b;
+}
+.marinho
+{
+	background-color: #33b8a5;
+}
+.marrom
+{
+	background-color: #553117;
+}
+.badge
+{
+	line-height: 2;
+	border-radius: 1.25rem;
+}
+#exampleFormControlTextarea2
+{
+	width: 500px;
+}

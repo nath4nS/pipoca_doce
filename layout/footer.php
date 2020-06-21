@@ -8,7 +8,7 @@
 		<form class="col-6 offset-3">
 		  <div class="form-group">
 		    <label for="exampleFormControlInput1">Nome</label>
-		    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rubens">
+		    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex.: João">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleFormControlInput1">Endereço de email</label>
