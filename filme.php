@@ -114,30 +114,7 @@
 <p>&nbsp;</p>	
 <div class="row" id="fundo_cinza">
 	<div class="col-6 offset-3">
-		<p>&nbsp;</p>
-		<table class="table table-sm table-dark">
-			<tbody>
-		<?php foreach($comentarios as $comentario): 
-			$usuario_id = $usuarioDAO->get($comentario->getUsuarioId());
-		?>
-		    <tr>
-		      <th scope="row">
-		      	<img src="admin/assets/img/usuario/<?= ($usuario_id->getImagem() != '' && file_exists('admin/assets/img/usuario/'.$usuario_id->getImagem()) ? $usuario_id->getImagem() : 'usuario.png') ?>" alt="" width="50" class="rounded-circle">
-		      <?= ($usuario_id->getNome()) ?>
-		      </th>
-			    <td>
-			   		<form>
-		 				<div>
-							<textarea class="form-control"readonly id="exampleFormControlTextarea2" rows="3"><?= ($comentario->getComentario()) ?>
-							</textarea>
-							<?= ($comentario->getDataComentario()) ?>
-						</div>
-				   	</form>		      	
-		      </td>
-		    </tr>
-		<?php endforeach; ?>
-		  </tbody>
-		</table>
+		<?php include_once('comentario.php'); ?>
 	</div>
 </div> 
 <?php  

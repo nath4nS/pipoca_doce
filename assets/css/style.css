@@ -212,3 +212,32 @@ p.filme_pag
 {
 	width: 500px;
 }
+.menu-img
+{
+	width: 100%;
+}
+.coment-img
+{
+	width: 50px;
+}
+
+.centraliza-tabela
+{
+	vertical-align: middle !important;
+}
+
+.login
+{
+	width: 400px;
+}
+
+.olho
+{
+	font-size: 23px;
+}
+
+.perfil
+{
+	margin-top: 40px;
+	margin-left: 320px;
+}

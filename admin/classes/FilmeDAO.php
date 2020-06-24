@@ -49,12 +49,12 @@ class FilmeDAO extends Model
                         LEFT JOIN filme_diretor fd on fd.id_filme = f.id
                         LEFT JOIN diretor d on d.id = fd.id_diretor                               
                             WHERE f.nome like '%{$pesquisa}%'
-                                        /*OR fg.nome like '%{$pesquisa}%'*/
+                                        OR g.nome like '%{$pesquisa}%'
                                         OR f.duracao like '%{$pesquisa}%'
                                         OR f.dataLancamento like '%{$pesquisa}%'
                                         OR f.tipo like '%{$pesquisa}%'
                                         OR f.elenco like '%{$pesquisa}%'
-                                        /*OR f.diretor like '%{$pesquisa}%'*/
+                                        OR d.nome like '%{$pesquisa}%'
                                             GROUP BY f.id
                                             limit {$limit}";
         } else {
