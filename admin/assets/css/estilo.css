@@ -32,6 +32,9 @@ table tbody tr {
 
 
 /*Dashboard*/
+.card-header {
+    text-align: center;
+}
 .total {
     text-align: center;
     align-items: center;

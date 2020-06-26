@@ -20,7 +20,7 @@
       <p>LOGIN</p>
     </a>
   <?php } ?>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="lista.php" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-film w3-xxlarge"></i>
     <p>FILMES</p>
   </a>

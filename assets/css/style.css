@@ -241,3 +241,23 @@ p.filme_pag
 	margin-top: 40px;
 	margin-left: 320px;
 }
+
+#TituloModalCentralizado
+{
+	color: black;
+	margin-left: 186px;
+}
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
+.estrelas
+{
+    text-align: center;
+}

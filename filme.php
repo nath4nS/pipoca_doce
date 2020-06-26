@@ -50,7 +50,10 @@
 		<?php foreach($avaliacoes as $avaliacao): ?>
 			<img class="estrela" src="admin/assets/img/estrelas/<?= ($avaliacao->getAvaliacao() != '' ? $avaliacao->getAvaliacao() : 0) ?>.png">
 			(<?= ($avaliacao->getAvaliacao() != '' ? $avaliacao->getAvaliacao() : 0) ?> / 5)
-		<?php endforeach; ?>
+		<?php 
+			endforeach; 
+			include('avaliacao.php');
+		?>
 
 	</div>
 	<div class="col-md-8">

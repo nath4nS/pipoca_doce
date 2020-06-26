@@ -18,7 +18,7 @@ class RelatorioDAO extends Model
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-/*	public function contarFilmesGenero($table = 'filme', $condicao = '')
+/*	public function contarFilmesGenero($table = 'filme-genero', $condicao = '')
     {
         $where = '';
         if($condicao != '') {
@@ -26,9 +26,9 @@ class RelatorioDAO extends Model
         }
         $sql = "SELECT g.nome as genero, count(*) as total 
                 FROM {$table} f
-                LEFT JOIN genero g ON g.id = f.genero
+                LEFT JOIN genero g ON g.id = g.nome
                 {$where}
-                GROUP BY f.genero;";
+                GROUP BY g.nome;";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);  

@@ -66,8 +66,12 @@ if($acao == 'deletar') {
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
 
-	$id_usuario = $usuarioDAO->insereUsuario($usuario);
-	$msg = 'Usuário cadastrado com sucesso';
+	try {
+		$id_usuario = $usuarioDAO->insereUsuario($usuario);
+		$msg = 'Usuário cadastrado com sucesso';
+	} catch (Exception $e) {
+		$msg = 'Email cadastrado já existe!'/*. $e->getMessage()*/ ;  
+	}
 
 	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
 
