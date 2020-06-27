@@ -64,6 +64,7 @@ if($acao == 'deletar') {
 	$usuario->setNome($_POST['nome']);
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
 	$usuario->setSenha($_POST['senha']);
 
 	try {
@@ -133,6 +134,7 @@ if($acao == 'deletar') {
 	$usuario->setNome($_POST['nome']);
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
 
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';

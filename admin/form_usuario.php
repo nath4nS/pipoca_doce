@@ -51,6 +51,20 @@ $usuario = new Usuario();
 				<label for="email">Email</label>
 				<input type="email" class="form-control" name="email" id="email" required value="<?=($usuario->getEmail() != '' ? $usuario->getEmail() : '')?>">
 			</div>
+
+			<div class="form-group">
+				<label for="tipo">Tipo</label>
+				<select type="text" class="form-control" name="tipo">
+					<option value="">Selecione o Tipo</option>
+						<option value="1" <?=($usuario->getTipo() == '1' ? 'selected' : '')?>>
+							Administrador
+						</option>
+						<option value="2" <?=($usuario->getTipo() == '2' ? 'selected' : '')?>> 
+							Usuário
+						</option>
+					</option>
+				</select>
+			</div>
 					
 			<div class="form-group">
 				<label for="password">Senha</label>

@@ -6,6 +6,7 @@ class Usuario
 	private $nome;
 	private $dataNascimento;
 	private $email;
+    private $tipo;
 	private $senha;
 	private $imagem;
 
@@ -95,6 +96,26 @@ class Usuario
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * @param mixed $tipo
+     *
+     * @return self
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }

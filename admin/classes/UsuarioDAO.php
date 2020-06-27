@@ -15,6 +15,7 @@ class UsuarioDAO extends Model
 				  '{$usuario->getNome()}',
 				  '{$usuario->getDataNascimentoBD()}',
 				  '{$usuario->getEmail()}',
+				  '{$usuario->getTipo()}',
 				  '{$usuario->getSenha()}',
 				  '{$usuario->getImagem()}'
 				  ";
@@ -28,7 +29,8 @@ class UsuarioDAO extends Model
 
 		$values = "nome = '{$usuario->getNome()}',
 					dataNascimento = '{$usuario->getDataNascimentoBD()}',
-					email = '{$usuario->getEmail()}'
+					email = '{$usuario->getEmail()}',
+					tipo = '{$usuario->getTipo()}'
 					{$altera_imagem}
 					{$altera_senha}";
 		$this->alterar($usuario->getId(), $values);
@@ -37,7 +39,7 @@ class UsuarioDAO extends Model
     public function getLogin($email, $senha)
     {
     	$sql = "SELECT * FROM {$this->tabela} 
-                WHERE email = :email AND senha = :senha";
+                WHERE email = :email AND senha = :senha AND tipo = 1;";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha);

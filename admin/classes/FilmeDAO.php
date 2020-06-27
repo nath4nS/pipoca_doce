@@ -40,7 +40,7 @@ class FilmeDAO extends Model
     	$this->alterar($filme->getId(), $values);
     }
 
-    public function listar($pesquisa = '', $limit = 300, $offset = 1)
+    public function listar($pesquisa = '', $limit = 300, $offset = 0)
     {
         if($pesquisa != '') {
             $sql = "SELECT f.*,group_concat(distinct d.nome) as nome_diretor, group_concat(distinct g.nome) as nome_genero FROM filme f 
