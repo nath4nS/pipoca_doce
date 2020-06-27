@@ -42,10 +42,6 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 	    </form>
 	</div>
 
-	<div class="col-2">
-		<a href="form_comentarios.php" class="btn btn-success">Novo Comentário</a>
-	</div>
-
 </div>
 <div class="row">
 	<table class="table table-hover table-responsive-lg">
@@ -73,10 +69,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $usuario_id->getNome() ?></td>
 				<td><?= $filme_id->getNome() ?></td>
 
-				<td>
-					<a href="form_comentarios.php?id=<?= $comentario->getId() ?>" class="btn btn-warning">
-						<i class="fas fa-edit"></i>
-					</a>					
+				<td>			
 					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o comentario?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>

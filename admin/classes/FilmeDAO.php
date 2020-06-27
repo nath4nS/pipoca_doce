@@ -72,6 +72,34 @@ class FilmeDAO extends Model
         return $stmt->fetchAll();
     }
 
+    public function listarPopulares($pesquisa = '', $limit = 300, $offset = 0)
+    {
+        if($pesquisa != '') {
+            $sql = "SELECT f.* , round(avg(avaliacao)) as avaliacao FROM pipoca_doce.filme f
+                            LEFT JOIN avaliacao a on a.filme_id = f.id 
+                            WHERE f.nome like '%{$pesquisa}%'
+                                        OR g.nome like '%{$pesquisa}%'
+                                        OR f.duracao like '%{$pesquisa}%'
+                                        OR f.dataLancamento like '%{$pesquisa}%'
+                                        OR f.tipo like '%{$pesquisa}%'
+                                        OR f.elenco like '%{$pesquisa}%'
+                                        OR d.nome like '%{$pesquisa}%'
+                                            GROUP BY f.id
+                                            order by avaliacao DESC
+                                            LIMIT {$offset}, {$limit}";
+        } else {
+            $sql = "SELECT f.* , round(avg(avaliacao)) as avaliacao FROM pipoca_doce.filme f
+                                LEFT JOIN avaliacao a on a.filme_id = f.id 
+                                group by f.id
+                                order by avaliacao DESC
+                                LIMIT {$offset}, {$limit}";
+        }
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function trailer($limit = 300, $offset = 1)
     {
 
@@ -85,10 +113,25 @@ class FilmeDAO extends Model
         return $stmt->fetchAll();
     }
 
-        public function paginacao()
+    public function paginacao($pesquisa = '')
     {
-
-        $sql = "SELECT COUNT(*) as total FROM {$this->tabela} ";
+        if($pesquisa != '') {
+            $sql = "SELECT COUNT(f.),group_concat(distinct d.nome) as nome_diretor, group_concat(distinct g.nome) as nome_genero FROM filme f 
+                        LEFT JOIN filme_genero fg on fg.id_filme = f.id
+                        LEFT JOIN genero g on g.id = fg.id_genero
+                        LEFT JOIN filme_diretor fd on fd.id_filme = f.id
+                        LEFT JOIN diretor d on d.id = fd.id_diretor
+                            WHERE f.nome like '%{$pesquisa}%'
+                                        OR g.nome like '%{$pesquisa}%'
+                                        OR f.duracao like '%{$pesquisa}%'
+                                        OR f.dataLancamento like '%{$pesquisa}%'
+                                        OR f.tipo like '%{$pesquisa}%'
+                                        OR f.elenco like '%{$pesquisa}%'
+                                        OR d.nome like '%{$pesquisa}%'
+                                            GROUP BY f.id";
+        } else {
+            $sql = "SELECT COUNT() as total FROM {$this->tabela} ";
+        }
         $stmt = $this->db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $stmt->execute();

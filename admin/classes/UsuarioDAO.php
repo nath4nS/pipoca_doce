@@ -48,12 +48,25 @@ class UsuarioDAO extends Model
     	return $stmt->fetch();
     }
 
+    public function getLoginUsuario($email, $senha)
+    {
+        $sql = "SELECT * FROM {$this->tabela} 
+                WHERE email = :email AND senha = :senha;";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    
 	public function listar($pesquisa = '')
 	{
 		if ($pesquisa != '') {
 			$sql = "SELECT * FROM {$this->tabela}
 					WHERE nome like '%{$pesquisa}%'
-						OR nome like '%{$pesquisa}%'";
+						OR dataNascimento like '%{$pesquisa}%'
+						OR email like '%{$pesquisa}%'";
 		} else {
 			$sql = "SELECT * FROM {$this->tabela}";
 		}

@@ -51,6 +51,17 @@ class AvaliacaoDAO extends Model
 		return $stmt->fetchAll();
 	}
 
+    public function filmeAvaliacao($id_filme)
+    {
+
+            $sql = "SELECT  round(avg(avaliacao)) as avaliacao FROM {$this->tabela}
+                    WHERE filme_id = '{$id_filme}'";
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
 	public function deletaAvaliacao($id)
     {
     	$sql = "DELETE FROM {$this->tabela} WHERE filme_id = {$id}";
@@ -58,31 +69,5 @@ class AvaliacaoDAO extends Model
     	$stmt->execute();
     }
 
-    public function listarPopulares($pesquisa = '', $limit = 300, $offset = 0)
-    {
-        if($pesquisa != '') {
-            $sql = "SELECT f.* , round(avg(avaliacao)) as avaliacao FROM pipoca_doce.filme f
-                            LEFT JOIN avaliacao a on a.filme_id = f.id 
-                            WHERE f.nome like '%{$pesquisa}%'
-                                        OR g.nome like '%{$pesquisa}%'
-                                        OR f.duracao like '%{$pesquisa}%'
-                                        OR f.dataLancamento like '%{$pesquisa}%'
-                                        OR f.tipo like '%{$pesquisa}%'
-                                        OR f.elenco like '%{$pesquisa}%'
-                                        OR d.nome like '%{$pesquisa}%'
-                                            GROUP BY f.id
-                                            order by avaliacao DESC
-                                            LIMIT {$offset}, {$limit}";
-        } else {
-            $sql = "SELECT f.* , round(avg(avaliacao)) as avaliacao FROM pipoca_doce.filme f
-                                LEFT JOIN avaliacao a on a.filme_id = f.id 
-                                group by f.id
-                                order by avaliacao DESC
-                                LIMIT {$offset}, {$limit}";
-        }
-        $stmt = $this->db->prepare($sql);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
+
 }

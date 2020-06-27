@@ -19,6 +19,7 @@ if(empty($usuario)) {
     $_SESSION['email'] = $usuario->getEmail();
     $_SESSION['imagem'] = $usuario->getImagem();
     $_SESSION['id_usuario'] = $usuario->getId();
+    $_SESSION['tipo'] = $usuario->getTipo();
 
     $msg = 'Usuário logado com sucesso!';
     header("Location: home.php?msg=$msg");

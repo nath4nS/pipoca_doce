@@ -28,12 +28,14 @@ class ComentarioDAO extends Model
 	public function listar($pesquisa = '')
 	{
 		if ($pesquisa != '') {
-			$sql = "SELECT * FROM {$this->tabela}
-					WHERE data like '%{$pesquisa}%'
-						OR data like '%{$pesquisa}%'";
-		} else {
-			$sql = "SELECT * FROM {$this->tabela}";
-		}
+            $sql = "SELECT * FROM {$this->tabela}
+                    WHERE data like '%{$pesquisa}%'
+                        OR data like '%{$pesquisa}%'
+                        ORDER BY id DESC";
+        } else {
+            $sql = "SELECT * FROM {$this->tabela}
+                    ORDER BY id DESC";
+        }
 		$stmt = $this->db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
 		$stmt->execute();
@@ -44,7 +46,8 @@ class ComentarioDAO extends Model
 	{
 
 			$sql = "SELECT  * FROM {$this->tabela}
-					WHERE filme_id = '{$id_filme}'";
+					WHERE filme_id = '{$id_filme}'
+					ORDER BY id DESC";
 		$stmt = $this->db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
 		$stmt->execute();

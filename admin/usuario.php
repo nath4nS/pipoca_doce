@@ -62,7 +62,15 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $usuario->getNome() ?></td>
 				<td><?= $usuario->getDataNascimento() ?></td>
 				<td><?= $usuario->getEmail() ?></td>
-				<td><?= $usuario->getTipo() ?></td>
+				<td><?php
+					  if($usuario->getTipo() == '1') {
+							echo 'Administrador';
+						} else  {
+							echo 'Usuário';
+						}
+					?>	
+				</td>
+
 				<td>
 					<a href="form_usuario.php?id=<?= $usuario->getId() ?>" class="btn btn-warning" title="Editar usuário">
 						<i class="fas fa-edit"></i>
