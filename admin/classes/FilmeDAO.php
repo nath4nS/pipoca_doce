@@ -72,6 +72,19 @@ class FilmeDAO extends Model
         return $stmt->fetchAll();
     }
 
+    public function trailer($limit = 300, $offset = 1)
+    {
+
+            $sql = "SELECT * FROM filme
+                            ORDER BY Rand()
+                            LIMIT {$offset}, {$limit}";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
         public function paginacao()
     {
 

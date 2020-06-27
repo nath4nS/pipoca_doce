@@ -120,7 +120,7 @@ CREATE TABLE `filme` (
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome_UNIQUE` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,12 +226,13 @@ CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `dataNascimento` date DEFAULT NULL,
-  `email` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tipo` int NOT NULL,
   `senha` varchar(255) NOT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +241,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Nathan Sousa','2000-06-15','nathan@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','19059715_1189472924498462_4082649541936361331_n-20200619000604.jpg'),(2,'Thiago Sousa','2000-01-14','thiago@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','ghgfhgf-20200626020611.png'),(3,'Rodrigo Nunes','1999-05-17','rodrigo@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','hffg-20200626020611.jpg'),(4,'Daniel Lopes','2000-04-01','daniel@gmail.com','81dc9bdb52d04dc20036dbd8313ed055','hfghgf-20200626020611.png');
+INSERT INTO `usuario` VALUES (1,'Nathan Sousa','2000-06-15','nathan@gmail.com',1,'81dc9bdb52d04dc20036dbd8313ed055','19059715_1189472924498462_4082649541936361331_n-20200619000604.jpg'),(2,'Thiago Sousa','2000-01-14','thiago@gmail.com',1,'81dc9bdb52d04dc20036dbd8313ed055','ghgfhgf-20200626020611.png'),(3,'Rodrigo Nunes','1999-05-17','rodrigo@gmail.com',1,'81dc9bdb52d04dc20036dbd8313ed055','hffg-20200626020611.jpg'),(4,'Daniel Lopes','2000-04-01','daniel@gmail.com',1,'81dc9bdb52d04dc20036dbd8313ed055','hfghgf-20200626020611.png'),(11,'testre','2020-06-26','teste@gmail',1,'81dc9bdb52d04dc20036dbd8313ed055','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -253,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25 23:56:18
+-- Dump completed on 2020-06-27 18:59:49
