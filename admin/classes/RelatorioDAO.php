@@ -18,11 +18,11 @@ class RelatorioDAO extends Model
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-    public function contarPerfil($table = 'usuario', $condicao = '')
+    public function contarPerfil($table = 'comentario', $condicao = '')
     {
         $where = '';
         if($condicao != ''){
-            $where = "where usuario_id = {$condicao}";
+            $where = "where filme_id = {$condicao}";
         }
         $sql = "SELECT count(*) as total FROM {$table} {$where};";
         $stmt = $this->db->prepare($sql);

@@ -2,9 +2,15 @@
 session_start();
 require 'classes/Usuario.php';
 require 'classes/UsuarioDAO.php';
+require 'classes/Comentario.php';
+require 'classes/Avaliacao.php';
+require 'classes/ComentarioDAO.php';
+require 'classes/AvaliacaoDAO.php';
 
 $usuario = new Usuario();
 $usuarioDAO = new UsuarioDAO();
+$comentarioDAO = new ComentarioDAO();
+$avaliacaoDAO = new AvaliacaoDAO();
 
 $acao = $_GET['acao'];
 $id = '';
@@ -27,6 +33,8 @@ $upload['erros'][4] = 'Não foi feito o upload do arquivo';
 
 if($acao == 'deletar') {
 
+	$avaliacaoDAO->deletaAvaliacaoUser($id);
+	$comentarioDAO->deletaComentarioUser($id);
 	$usuarioDAO->deletar($id);
 	$msg = 'Usuário excluído com sucesso';
 

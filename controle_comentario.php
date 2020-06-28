@@ -17,4 +17,4 @@ $id_filme= $_GET['id'];
 	$id = $comentarioDAO->insereComentario($comentario);
 	$msg = 'comentario cadastrado com sucesso';
 
-	header("Location: filme.php?id=$id_filme");
+	header("Location: filme.php?id=$id_filme&msg=$msg");

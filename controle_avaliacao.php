@@ -5,17 +5,18 @@ require 'admin/classes/AvaliacaoDAO.php';
 
 $avaliacao = new Avaliacao();
 $avaliacaoDAO = new AvaliacaoDAO();
-
-	$id_filme = $_GET['id_filme'];
+$id_filme = $_GET['id_filme'];
 
 	$avaliacao->setAvaliacao($_POST['avaliacao']);
-	$avaliacao->setDataAvaliacao(date('Y-m-d H:i:s')) ;
-	$avaliacao->setUsuarioId($_SESSION['id_usuario']) ;
+	$avaliacao->setDataAvaliacao(date('Y-m-d H:i:s'));
+	$avaliacao->setUsuarioId($_SESSION['id_usuario']);
 	$avaliacao->setFilmeId($id_filme) ; 
 
 	
-
 	$id = $avaliacaoDAO->insereAvaliacao($avaliacao);
 	$msg = 'avaliacao cadastrado com sucesso';
 
 	header("Location: filme.php?id=$id_filme&msg=$msg");
+
+	
+

@@ -1,10 +1,16 @@
-<?php include_once 'layout/header.php';?>
-<?php include_once 'layout/menu.php';?>
+<?php 
+include_once 'layout/header.php';
+include_once 'layout/menu.php';
+include_once 'admin/classes/RelatorioDAO.php';
+include_once('admin/classes/Comentario.php');
+include_once('admin/classes/ComentarioDAO.php');
+require_once 'admin/classes/Usuario.php';
+require_once 'admin/classes/UsuarioDAO.php';
+include_once('admin/classes/Filme.php');
+include_once('admin/classes/FilmeDAO.php');
+include_once('admin/classes/Avaliacao.php');
+include_once('admin/classes/AvaliacaoDAO.php');
 
-<?php
-
-require 'admin/classes/Usuario.php';
-require 'admin/classes/UsuarioDAO.php';
 
 $usuario = new Usuario();
 	if(isset($_GET['id']) && $_GET['id'] != '') {
@@ -12,6 +18,17 @@ $usuario = new Usuario();
 		$usuarioDAO = new UsuarioDAO();
 		$usuario = $usuarioDAO->get($id);
 	}
+$filmeDAO = new FilmeDAO();
+$avaliacaoDAO = new AvaliacaoDAO();
+$avaliacoes = $avaliacaoDAO->mostrar($usuario->getId());
+$comentarioDAO = new ComentarioDAO();
+$comentarios = $comentarioDAO->mostrar($usuario->getId());
+$relatorioDAO = new RelatorioDAO();
+$total_avaliacao = $relatorioDAO->contarPerfil('avaliacao' , $usuario->getId());
+$total_comentario = $relatorioDAO->contarPerfil('comentario', $usuario->getId());
+
+
+
 ?>
 <div class="container">
 	<div class="row ">
@@ -58,7 +75,32 @@ $usuario = new Usuario();
 				<button type="reset" class="btn btn-warning">Resetar</button>
 			</div>
 		</div>		
-	</form>	
+	</form>
+	<p>&nbsp;</p>
+	<div class="row">
+		<div class="col-3 caixa">
+			<div class="card">
+				<strong>
+					<div class="card-header">Nº de filmes Avaliados</div>
+					<div class="card-body card-dashboard">
+						<p class="total card-text"><?= $total_avaliacao['total'] ?? 0; ?></p>
+						<?php include_once('perfil_avaliacao.php'); ?>
+					</div>
+				</strong>
+			</div>
+		</div>
+		<div class="col-3 caixa2">
+			<div class="card">
+				<strong>
+					<div class="card-header">Nº de filmes Comentados</div>
+					<div class="card-body card-dashboard">
+						<p class="total card-text"><?= $total_comentario['total'] ?? 0; ?></p>
+						<?php include_once('perfil_comentarios.php'); ?>
+					</div>
+				</strong>
+			</div>
+		</div>
+	</div>	
 </div>
 
 <?php  

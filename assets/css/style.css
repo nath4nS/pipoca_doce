@@ -277,6 +277,10 @@ p.filme_pag
 {
 	color: black;
 }
+.card-header
+{
+	color: black;
+}
 .estrela_lista
 {
 	margin-left: 56px;
@@ -291,4 +295,38 @@ p.filme_pag
 .centraliza
 {
 	margin-left: 155px;
+}
+
+.form-inline 
+{
+	flex-flow: row;
+}
+
+.alfa
+{
+	margin-left: 58px;
+}
+
+.modal_aval
+{
+	width: 250%;
+    height: 200px;
+}
+.modal_coment
+{
+	width: 86%;
+    height: 240px;
+}
+.text_coment 
+{
+	vertical-align: middle !important;
+}
+.caixa
+{
+	margin-bottom: 40px;
+    margin-left: 232px;
+}
+.caixa2
+{
+	margin-bottom: 40px;;
 }

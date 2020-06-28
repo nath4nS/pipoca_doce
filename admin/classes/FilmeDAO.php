@@ -129,7 +129,7 @@ public function alfabetica($letra = '',$limit = 300, $offset = 1)
     {
         if($pesquisa != '') 
         {
-            $sql = "SELECT COUNT() as total  FROM filme f 
+            $sql = "SELECT COUNT(*) as total  FROM filme f 
                         LEFT JOIN filme_genero fg on fg.id_filme = f.id
                         LEFT JOIN genero g on g.id = fg.id_genero
                         LEFT JOIN filme_diretor fd on fd.id_filme = f.id
@@ -143,7 +143,7 @@ public function alfabetica($letra = '',$limit = 300, $offset = 1)
                                         OR d.nome like '%{$pesquisa}%' ;";
         } else if($letra != '')
         {
-            $sql = "SELECT COUNT() as total  FROM filme
+            $sql = "SELECT COUNT(*) as total  FROM filme
                         where nome like '{$letra}%';";
         } else {
             $sql = "SELECT COUNT(*) as total FROM {$this->tabela} ";

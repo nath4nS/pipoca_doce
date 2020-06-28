@@ -75,6 +75,13 @@ class AvaliacaoDAO extends Model
         return $stmt->fetch();
     }
 
+    public function deletaAvaliacaoUser($id)
+    {
+    	$sql = "DELETE FROM {$this->tabela} WHERE usuario_id = {$id}";
+    	$stmt = $this->db->prepare($sql);
+    	$stmt->execute();
+    }
+
 	public function deletaAvaliacao($id)
     {
     	$sql = "DELETE FROM {$this->tabela} WHERE filme_id = {$id}";

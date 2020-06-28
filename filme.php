@@ -31,9 +31,16 @@
 	$diretorDAO = new DiretorDAO();
 	$filmeDiretorDAO = new FilmeDiretorDAO();
 	$diretores = $filmeDAO->getDiretor($id);
+
 	$avaliacaoDAO = new AvaliacaoDAO();
+	if(isset($_GET['id']) && $_GET['id'] != '') {
+		$id = $_GET['id'];
+		
+		$avaliacao = $avaliacaoDAO->get($id);
+	}
 	$avaliacoes = $avaliacaoDAO->listarAvaliacao($id);
 	$comentarioDAO = new ComentarioDAO();
+
 	$comentarios = $comentarioDAO->listarComentario($id);
 	$usuarioDAO = new UsuarioDAO();
 	$usuarios = $usuarioDAO->listar();
