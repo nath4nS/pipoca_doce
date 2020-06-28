@@ -24,8 +24,7 @@ class GeneroDAO extends Model
 	{
 		if ($pesquisa != '') {
             $sql = "SELECT * FROM {$this->tabela} 
-                    WHERE nome like '%{$pesquisa}%'
-                        OR nome like '%{$pesquisa}%'";
+                    WHERE nome like '%{$pesquisa}%'";
 		} else {
 			$sql = "SELECT * FROM {$this->tabela}";
 		}

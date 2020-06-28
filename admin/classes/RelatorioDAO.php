@@ -18,19 +18,30 @@ class RelatorioDAO extends Model
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-/*	public function contarFilmesGenero($table = 'filme-genero', $condicao = '')
+    public function contarPerfil($table = 'usuario', $condicao = '')
+    {
+        $where = '';
+        if($condicao != ''){
+            $where = "where usuario_id = {$condicao}";
+        }
+        $sql = "SELECT count(*) as total FROM {$table} {$where};";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function contarFilmesAvaliacao($table = 'avaliacao', $condicao = '')
     {
         $where = '';
         if($condicao != '') {
-            $where = "WHERE {$condicao}";
+            $where = " WHERE {$condicao}";
         }
-        $sql = "SELECT g.nome as genero, count(*) as total 
-                FROM {$table} f
-                LEFT JOIN genero g ON g.id = g.nome
-                {$where}
-                GROUP BY g.nome;";
+        $sql = "SELECT f.nome, round(avg(avaliacao)) as avaliacao, count(*) as total
+                FROM avaliacao a 
+                LEFT JOIN filme f ON f.id = a.filme_id
+                GROUP BY a.filme_id;";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);  
-    }*/
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

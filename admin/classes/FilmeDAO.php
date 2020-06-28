@@ -113,10 +113,23 @@ class FilmeDAO extends Model
         return $stmt->fetchAll();
     }
 
-    public function paginacao($pesquisa = '')
+public function alfabetica($letra = '',$limit = 300, $offset = 1)
     {
-        if($pesquisa != '') {
-            $sql = "SELECT COUNT(f.*),group_concat(distinct d.nome) as nome_diretor, group_concat(distinct g.nome) as nome_genero FROM filme f 
+        $sql = "SELECT * FROM filme
+                where nome like '$letra%'
+                LIMIT {$offset}, {$limit};";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function paginacao($pesquisa = '', $letra = '')
+    {
+        if($pesquisa != '') 
+        {
+            $sql = "SELECT COUNT() as total  FROM filme f 
                         LEFT JOIN filme_genero fg on fg.id_filme = f.id
                         LEFT JOIN genero g on g.id = fg.id_genero
                         LEFT JOIN filme_diretor fd on fd.id_filme = f.id
@@ -127,8 +140,11 @@ class FilmeDAO extends Model
                                         OR f.dataLancamento like '%{$pesquisa}%'
                                         OR f.tipo like '%{$pesquisa}%'
                                         OR f.elenco like '%{$pesquisa}%'
-                                        OR d.nome like '%{$pesquisa}%'
-                                            GROUP BY f.id";
+                                        OR d.nome like '%{$pesquisa}%' ;";
+        } else if($letra != '')
+        {
+            $sql = "SELECT COUNT() as total  FROM filme
+                        where nome like '{$letra}%';";
         } else {
             $sql = "SELECT COUNT(*) as total FROM {$this->tabela} ";
         }

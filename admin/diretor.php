@@ -54,10 +54,10 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $diretor->getId() ?></td>
 				<td><?= $diretor->getNome() ?></td>
 				<td>
-					<a href="form_diretor.php?id=<?= $diretor->getId() ?>" class="btn btn-warning">
+					<a href="form_diretor.php?id=<?= $diretor->getId() ?>" title="Editar diretor" class="btn btn-warning">
 						<i class="fas fa-edit"></i>
 					</a>					
-					<a href="controle_diretor.php?acao=deletar&id=<?= $diretor->getId() ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o diretor?')">
+					<a href="controle_diretor.php?acao=deletar&id=<?= $diretor->getId() ?>" title="Excluir diretor" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o diretor?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>

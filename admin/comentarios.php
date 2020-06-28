@@ -64,15 +64,15 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 			
 			<tr>
 				<td><?= $comentario->getId() ?></td>
-				<<!-- td><?= $comentario->//getComentario() ?></td> -->
-				<td data-toggle="tooltip" title="<?= ($comentario->getComentario() != '' ? $comentario->getComentario() : ''); ?>"><?= ($comentario->getComentario != '' ? substr($comentario->getComentario(),0,15).'...' : ''); ?></td>
-				<td>
+				<td><?= $comentario->getComentario() ?></td> 
+				<!-- <td data-toggle="tooltip" title="<?= ($comentario->getComentario() != '' ? $comentario->getComentario() : ''); ?>"><?= ($comentario->getComentario != '' ? substr($comentario->getComentario(),0,15).'...' : ''); ?></td>
+				<td> -->
 				<td><?= $comentario->getDataComentario() ?></td>
 				<td><?= $usuario_id->getNome() ?></td>
 				<td><?= $filme_id->getNome() ?></td>
 
 				<td>			
-					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o comentario?')">
+					<a href="controle_comentarios.php?acao=deletar&id=<?= $comentario->getId() ?>" title="Excluir comentário" class="btn btn-danger" onclick="return confirm('Deseja realmente exluir o comentario?')">
 						<i class="fas fa-trash-alt"></i>
 					</a>
 				</td>
