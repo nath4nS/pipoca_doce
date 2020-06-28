@@ -66,12 +66,15 @@ $usuario = new Usuario();
 						<label for="password">Senha</label>
 						<input type="password" class="form-control" name="senha" id="senha" required>
 					</div>
+					<div class="form-group">
+						<input type="hidden" class="form-control" name="tipo" id="tipo" value="2">
+					</div>
 
 					<div class="form-group row login">
 						<button type="submit" class="btn btn-primary">Cadastrar</button>
 					</div>
-					</div>
-				</form>
+				</div>
+			</form>
 			</div>
 		</div>
 	</div>

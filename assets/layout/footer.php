@@ -5,20 +5,20 @@
 		</div>
 	</div>
 	<div class="row" id="footer">
-		<form class="col-6 offset-3">
+		<form class="col-6 offset-3" action="envia_contato.php" method="post" accept-charset="utf-8">
 		  <div class="form-group">
-		    <label for="exampleFormControlInput1">Nome</label>
-		    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex.: João">
+		    <label for="nome">Nome</label>
+		    <input type="text" class="form-control" name="nome" id="nome" placeholder="Informe seu Nome" required>
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleFormControlInput2">Endereço de email</label>
-		    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="nome@exemplo.com">
+		    <label for="email">Endereço de email</label>
+		    <input type="email" class="form-control" name="email" id="email" placeholder="nome@exemplo.com" required>
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">Mensagem</label>
-		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		    <label for="mensagem">Mensagem</label>
+		    <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required></textarea>
 		  </div>
-		  <button class="btn btn-info">Enviar</button>
+		  <button class="btn btn-info" type="submit">Enviar</button>
 		</form>
 	</div>
 		    <div class="row" id="footer">

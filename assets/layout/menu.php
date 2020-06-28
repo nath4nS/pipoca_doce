@@ -10,7 +10,7 @@
   <?php 
     if(isset($_SESSION['nome'])) {
   ?>
-    <a href="perfil_usuario.php?id=$_SESSION['id_usuario']" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="perfil_usuario.php?id=<?= $_SESSION['id_usuario'] ?>" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <img src="admin/assets/img/usuario/<?= ($_SESSION['imagem'] != '' && file_exists('admin/assets/img/usuario/'.$_SESSION['imagem']) ? $_SESSION['imagem'] : 'usuario.png' ) ?>" class="rounded-circle user-img-menu menu-img">
       <p><?= ($_SESSION['nome']) ?></p>
     </a>
@@ -20,7 +20,7 @@
       <p>LOGIN</p>
     </a>
   <?php } ?>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="lista.php" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-film w3-xxlarge"></i>
     <p>FILMES</p>
   </a>

@@ -5,8 +5,9 @@
     include_once('admin/classes/FilmeDAO.php');
 
     $filmeDAO = new FilmeDAO();
-    $filmesdestaque = $filmeDAO->listar('', 3);
-    $filmes = $filmeDAO->listar('', 10);
+    $filmesdestaque = $filmeDAO->trailer(3);
+    shuffle($filmesdestaque);
+    $filmes = $filmeDAO->listarPopulares('', 10);
     $filmesbreve = $filmeDAO->listarBreve(10);
 ?>
 
@@ -86,9 +87,7 @@
     <p>&nbsp;</p>
     <p>O sistema onde possamos ter uma comunidade, cheia de fóruns para a indicação de filmes, com área de filmes mais votados, com a interação do usuário podendo avaliar as melhores filmes e comentários.</p>
 </div>
-<div class="row" id="fundo_cinza">
-    <a href="#" id="canto_direito">+Informações</a>
-</div>
+
 
 <?php  
 	include_once('layout/footer.php');

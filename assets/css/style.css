@@ -5,6 +5,10 @@
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 
+h1, p, body, h2, h3, h5
+{
+	font: Optima, sans-serif;
+}
 h1 {
     font-size: 56px;
 }
@@ -208,7 +212,11 @@ p.filme_pag
 	line-height: 2;
 	border-radius: 1.25rem;
 }
-#exampleFormControlTextarea2
+#mensagem
+{
+	width: 100%;
+}
+#comentario
 {
 	width: 500px;
 }
@@ -260,4 +268,27 @@ p.filme_pag
 .estrelas
 {
     text-align: center;
+}
+.lista
+{
+	width: 100%;
+}
+.card-text
+{
+	color: black;
+}
+.estrela_lista
+{
+	margin-left: 56px;
+    width: 130px;
+    margin-top: 15px;
+}
+.pagination 
+{
+ 	margin-top: 15px;
+    margin-left: 372px;
+}
+.centraliza
+{
+	margin-left: 155px;
 }

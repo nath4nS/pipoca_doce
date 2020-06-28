@@ -1,0 +1,294 @@
+
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+h1, p, body, h2, h3, h5
+{
+	font: Optima, sans-serif;
+}
+h1 {
+    font-size: 56px;
+}
+p
+{
+	font-size: 25px;
+    text-align: center;
+}
+
+iframe {
+	width: 100%;
+	height: 70%;
+}
+
+form
+{
+	width: 33%;
+}
+
+.container-fluid {
+    width: 93.5%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 120px;
+}
+
+.carousel-control-next, .carousel-control-prev
+{
+	width: 11%;
+	height: 7%;
+	top: 50%;
+}
+
+.carousel-caption:hover
+{
+	width: 100%;
+    left: 0;
+    bottom: 0;
+	background-color: black;
+	opacity: 0.7;
+	color: white;
+}
+
+.carousel-caption
+{
+	width: 100%;
+    left: 0;
+    bottom: 0;
+	background-color: transparent;
+	opacity: 0.7;
+	color: transparent;
+}
+
+
+#fundo_branco
+{
+	background-color: white;
+	color: black;
+}
+#fundo_cinza
+{
+	background-color: #5a5555;
+	
+}
+
+
+#listagem
+{
+	margin-left: 40px;
+  	left: 20px;  
+}
+
+#canto_direito:hover
+{
+	color: #000;
+}
+#canto_direito
+{
+	margin-left: auto;
+    margin-right: 50px;
+}
+
+#cartaz
+{
+	width: 60%;
+    height: 315px;
+}
+
+#footer 
+{
+	background-color: #373636;
+}
+
+.form-control {
+	align-items: center;
+}
+.owl-next, .owl-prev:hover {
+	font-size: 70px !important;
+	position: relative;
+    top: -235px;
+    opacity: 0.7;
+}
+.owl-next, .owl-prev {
+	font-size: 70px !important;
+	position: relative;
+    top: -235px;
+    opacity: 0.7;
+}
+.owl-prev {
+	left: -817px;
+}
+.owl-next {
+	left: 693px;
+}
+
+.owl-dots
+{
+	top: 77%;
+    left: 50%;
+    position: absolute;
+
+}
+
+img.filme_pag
+{
+	margin-left: 90px;
+	width: 426px;
+	float: left;
+	display: inline-block;
+}
+
+h1.filme_pag
+{
+	margin-left: 19%;
+    display: inline-block;
+}
+.afasta_top
+{
+	margin-top: 38px;
+}
+
+p.filme_pag
+{
+	text-align: justify;
+    margin-top: 51px;
+    margin-right: 96px;
+}
+
+#elenco
+{
+	text-align: justify;
+}
+
+#diretor
+{
+	text-align: justify;
+}
+
+.estrela
+{
+	margin-left: 230px;
+    width: 130px;
+    margin-top: 15px;
+}
+
+.genero 
+{
+	margin-left: 75px;
+}
+
+.roxo
+{
+	background-color: #6a009e;
+}
+.verde
+{
+	background-color: #28a745;
+}
+.vermelho
+{
+	background-color: #dc3545;
+}
+.azul
+{
+	background-color: #007bff;
+}
+.laranja
+{
+	background-color: #f9a54b;
+}
+.marinho
+{
+	background-color: #33b8a5;
+}
+.marrom
+{
+	background-color: #553117;
+}
+.badge
+{
+	line-height: 2;
+	border-radius: 1.25rem;
+}
+#mensagem
+{
+	width: 100%;
+}
+#comentario
+{
+	width: 500px;
+}
+.menu-img
+{
+	width: 100%;
+}
+.coment-img
+{
+	width: 50px;
+}
+
+.centraliza-tabela
+{
+	vertical-align: middle !important;
+}
+
+.login
+{
+	width: 400px;
+}
+
+.olho
+{
+	font-size: 23px;
+}
+
+.perfil
+{
+	margin-top: 40px;
+	margin-left: 320px;
+}
+
+#TituloModalCentralizado
+{
+	color: black;
+	margin-left: 186px;
+}
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
+.estrelas
+{
+    text-align: center;
+}
+.lista
+{
+	width: 100%;
+}
+.card-text
+{
+	color: black;
+}
+.estrela_lista
+{
+	margin-left: 56px;
+    width: 130px;
+    margin-top: 15px;
+}
+.pagination 
+{
+ 	margin-top: 15px;
+    margin-left: 372px;
+}
+.centraliza
+{
+	margin-left: 155px;
+}

@@ -5,19 +5,24 @@
 		      <th class="centraliza-tabela">
 		      	<?php 
 				    if(isset($_SESSION['nome'])) {
+				    	$url = "controle_comentario.php?id=";
+				    	$id_filme = $filme->getId();
 				?>
 				    <img src="admin/assets/img/usuario/<?= ($_SESSION['imagem'] != '' && file_exists('admin/assets/img/usuario/'.$_SESSION['imagem']) ? $_SESSION['imagem'] : 'usuario.png' ) ?>" class="rounded-circle user-img-menu menu-img coment-img">
 				      <?= ($_SESSION['nome']) ?>
-				<?php }else{ ?>
+				<?php }else{ 
+					$url = "form_usuario.php";
+					$id_filme = '';
+				?>
 					<img src="admin/assets/img/usuario/usuario.png" class="rounded-circle user-img-menu menu-img coment-img">
 				<?php } ?>
 
 		      </th>
 		      <th>
-		      	<form action="controle_comentario.php?id=<?= $filme->getId() ?>" method="post">
+		      	<form action="<?= $url , $id_filme  ?>" method="post">
 		 			<div>
 		 				<p>&nbsp;</p>
-						<textarea class="form-control" name="comentario" id="exampleFormControlTextarea2" rows="3"></textarea>
+						<textarea class="form-control" name="comentario" id="comentario" rows="3"></textarea>
 						
 						
 						<button class="btn btn-info">
@@ -41,7 +46,7 @@
 			   		<form>
 		 				<div>
 		 					<p>&nbsp;</p>
-							<textarea class="form-control"readonly id="exampleFormControlTextarea2" rows="3"><?= ($comentario->getComentario()) ?>
+							<textarea class="form-control"readonly id="comentario" rows="3"><?= ($comentario->getComentario()) ?>
 							</textarea>
 							<?= ($comentario->getDataComentario()) ?>
 						</div>

@@ -14,7 +14,7 @@ if(isset($_GET['id']) && $_GET['id'] != '') {
 
 /**Configurações de upload de imagens*/
 
-$upload['pasta_usuario'] = 'assets/img/usuario/';
+$upload['pasta_usuario'] = 'admin/assets/img/usuario/';
 $upload['extensoes'] = ['jpg', 'png', 'gif'];
 
 $upload['erros'][0] = 'Não houve erro';
@@ -65,6 +65,7 @@ if($acao == 'deletar') {
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
+	$usuario->setTipo($_POST['tipo']);
 
 	$id_usuario = $usuarioDAO->insereUsuario($usuario);
 	$msg = 'Usuário cadastrado com sucesso';
@@ -84,7 +85,7 @@ if($acao == 'deletar') {
 
 		if ($_FILES['imagem']['error'] != 0) {
 		  $msg = "Não foi possível fazer o upload, erro:" . $upload['erros'][$_FILES['imagem']['error']];
-		  header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
+		  header("Location: perfil_usuario.php?id=$id_usuario&msg=$msg");
 		  exit;
 		}
 
@@ -92,7 +93,7 @@ if($acao == 'deletar') {
 		$extensao = strtolower(end($imagem));
 		if(array_search($extensao, $upload['extensoes']) === false) {
 		  $msg = "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
-		  header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
+		  header("Location: perfil_usuario.php?id=$id_usuario&msg=$msg");
 		  exit;
 		}
 		$nome_final = $imagem[0] . '-' . date('YmdHmi') . '.' . $extensao;
@@ -120,12 +121,13 @@ if($acao == 'deletar') {
 		} else {
 		  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
 		  $msg = "Não foi possível enviar o arquivo, tente novamente";
-		  header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
+		  header("Location: perfil_usuario.php?id=$id_usuario&msg=$msg");
 		  exit;
 		}
 	}
 
 	$usuario->setId($_POST['id']);
+	$usuario->setTipo($_POST['tipo']);
 	$usuario->setNome($_POST['nome']);
 	$usuario->setDataNascimento($_POST['dataNascimento']);
 	$usuario->setEmail($_POST['email']);
@@ -133,7 +135,7 @@ if($acao == 'deletar') {
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';
 	
-	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
+	header("Location: perfil_usuario.php?id=$id_usuario&msg=$msg");
 
 } else if($acao == 'removeImagem') {
 	$usuario = $usuarioDAO->get($id);
