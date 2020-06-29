@@ -39,7 +39,8 @@ class RelatorioDAO extends Model
         $sql = "SELECT f.nome, round(avg(avaliacao)) as avaliacao, count(*) as total
                 FROM avaliacao a 
                 LEFT JOIN filme f ON f.id = a.filme_id
-                GROUP BY a.filme_id;";
+                GROUP BY a.filme_id
+                LIMIT 10";
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
