@@ -29,8 +29,7 @@ class ComentarioDAO extends Model
 	{
 		if ($pesquisa != '') {
             $sql = "SELECT * FROM {$this->tabela}
-                    WHERE data like '%{$pesquisa}%'
-                        OR data like '%{$pesquisa}%'
+                    WHERE comentario like '%{$pesquisa}%'
                         ORDER BY id DESC";
         } else {
             $sql = "SELECT * FROM {$this->tabela}
