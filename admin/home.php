@@ -17,7 +17,7 @@ $filmes_avaliacao = json_encode($relatorioDAO->contarFilmesAvaliacao('avaliacao'
 <div class="row">
 	<div class="col-3">
 		<div class="card">
-			<div class="card-header"><strong>Quantidade Usuários</strong></div>
+			<div class="card-header"><strong>Quantidade de Usuários</strong></div>
 			<div class="card-body card-dashboard">
 				<p class="total"><?= $total_usuarios['total'] ?? 0; ?></p>
 			</div>
@@ -25,7 +25,7 @@ $filmes_avaliacao = json_encode($relatorioDAO->contarFilmesAvaliacao('avaliacao'
 	</div>
 	<div class="col-3">
 		<div class="card">
-			<div class="card-header"><strong>Quantidade Filmes</strong></div>
+			<div class="card-header"><strong>Quantidade de Filmes</strong></div>
 			<div class="card-body card-dashboard">
 				<p class="total filmes"><?= $total_filmes['total'] ?? 0; ?></p>
 			</div>
@@ -33,7 +33,7 @@ $filmes_avaliacao = json_encode($relatorioDAO->contarFilmesAvaliacao('avaliacao'
 	</div>
 	<div class="col-3">
 		<div class="card">
-			<div class="card-header"><strong>Quantidade Comentários</strong></div>
+			<div class="card-header"><strong>Quantidade de Comentários</strong></div>
 			<div class="card-body card-dashboard">
 				<p class="total comentarios"><?= $total_comentarios['total'] ?? 0; ?></p>
 			</div>
@@ -41,7 +41,7 @@ $filmes_avaliacao = json_encode($relatorioDAO->contarFilmesAvaliacao('avaliacao'
 	</div>
 	<div class="col-3">
 		<div class="card">
-			<div class="card-header"><strong>Quantidade Avaliações</strong></div>
+			<div class="card-header"><strong>Quantidade de Avaliações</strong></div>
 			<div class="card-body card-dashboard">
 				<p class="total avaliacoes"><?= $total_avaliacoes['total'] ?? 0; ?></p>
 			</div>
