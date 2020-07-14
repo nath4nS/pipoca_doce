@@ -16,7 +16,7 @@ $usuario = new Usuario();
 	<p>&nbsp;</p>
 	<div class="row">
 		<div class="col" style=" margin-left: 90px;">
-			<h2>Fazer Login da conta</h2>
+			<h2>Fazer Login</h2>
 		</div>
 		<div class="col">
 			<h2>Cadastrar-se</h2>
