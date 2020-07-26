@@ -35,7 +35,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 
 	<div class="col-4">
 		<form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um filme" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+		      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Digite um Filme" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 		      	<i class="fas fa-search"></i>	
 		      </button>
@@ -45,7 +45,7 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 	    </form>
 	</div>
 
-		<div class="col-2">
+	<div class="col-2">
 			<a href="form_filme.php" class="btn btn-success">Novo Filme</a>
 	</div>
 

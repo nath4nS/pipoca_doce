@@ -85,7 +85,7 @@
 </div>
 <div class="row" id="fundo_cinza">
     <p>&nbsp;</p>
-    <p>O sistema onde possamos ter uma comunidade, cheia de fóruns para a indicação de filmes, com área de filmes mais votados, com a interação do usuário podendo avaliar as melhores filmes e comentários.</p>
+    <p>O sistema onde conta com uma comunidade de usuários, cheia de fóruns para a indicação de filmes, com área de filmes mais votados, com a interação do usuário podendo avaliar as melhores filmes e comentários.</p>
 </div>
 
 
